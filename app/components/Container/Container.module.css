@@ -1,0 +1,9 @@
+.container {
+    padding: 32px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.opFlexWrap {
+    flex-wrap: wrap;
+}

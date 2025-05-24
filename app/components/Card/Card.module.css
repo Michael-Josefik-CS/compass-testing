@@ -1,0 +1,110 @@
+.card {
+    height: 400px;
+    min-width: 240px;
+    max-width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+    overflow: hidden;
+    position: relative;
+
+    border-radius: 16px;
+    background: #F7F7F8;
+
+    /* Raised/Light/Level 1 */
+    box-shadow: 
+        -8px -8px 16px 0px rgba(247, 246, 246, 0.80), 
+        8px 8px 16px 0px rgba(4, 33, 64, 0.15);
+
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 
+        -18px -18px 28px 0px rgba(247, 246, 246, 0.80), 
+        20px 20px 32px 0px rgba(11, 58, 109, 0.15);
+}
+
+.shadowOverlay {
+    position: absolute; /* Position it absolutely over the card */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.01); /* The shadow color */
+    z-index: 1; /* Ensure it's over the image but under the content */
+    box-shadow: 
+        -2px -2px 2px 0px rgba(0, 0, 0, 0.1) inset, 
+        1px 1px 2px 0px rgba(255, 255, 255, 0.80) inset;
+    
+    transition: background 0.25s ease-in-out;
+}
+
+.card:hover .shadowOverlay {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.content {
+    height: 240px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.headerTextWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.secodary {
+    color: hsla(220, 30%, 18%, .6);
+}
+
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease-in-out;
+}
+
+.card:hover .image {
+    transform: scale(1.03);
+}
+
+.buttonWrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    vertical-align: bottom;
+    opacity: .7;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.card:hover .buttonWrapper {
+    opacity: 1;
+}
+
+.buttonWrapper p {
+    display: block;
+}

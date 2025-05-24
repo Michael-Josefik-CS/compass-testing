@@ -1,0 +1,15 @@
+{
+  "entry": {
+    "title": "Paris, France",
+    "slug": "paris-france",
+    "hero_image": {
+      "uid": "blt2fbbd9a7ced0ea9d"
+    },
+    "intro_blurb": "The romantic capital of the world, with art, culture, and fine dining.",
+    "region": {
+      "uid": "europe"
+    },
+    "top_experiences": ["Eiffel Tower Tour", "Louvre Museum Visit"],
+    "published": true
+  }
+}

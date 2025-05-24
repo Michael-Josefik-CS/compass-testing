@@ -1,0 +1,57 @@
+.header {
+
+    position: sticky;
+    top: 0; /* Ensures the header sticks to the top of the page */
+    height: 104px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-bottom: 1px solid var(--Surface-Text-Default-Primary, #f4eff828);
+    background: rgba(255, 255, 255, 0.8); /* or use your var with alpha */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* for Safari support */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    width: 100%;
+    max-width: 1440px;
+    padding-inline: 32px;
+}
+
+.logo img {
+    height: 36px; /* Adjust size as needed */
+}
+
+.navLinks {
+    list-style-type: none;
+    display: flex;
+    gap: 0;
+    align-self: stretch;
+}
+
+.navLinks li {
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navLinks li a {
+    color: var(--text-default-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.32px;
+}
+
+.navLinks li a:hover {
+    color: var(--text-action-primary);
+}

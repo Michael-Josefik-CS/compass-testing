@@ -1,0 +1,15 @@
+{
+    "data": {
+      "environments": ["development"],
+      "entries": {
+        "advisor_specialty": [
+            "entries/specialty-test.json"
+        ]
+      }
+    },
+    "locale": "en-us",
+    "contentstack": {
+      "apiKey": "blt4e4bab83e0d9bcf1",
+      "managementToken": "cs4c5fc4a52040d679572c522f"
+    }
+  }

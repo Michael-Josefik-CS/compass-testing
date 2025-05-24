@@ -1,0 +1,57 @@
+[
+    {
+      "entry": {
+        "title": "Romance Travel",
+        "description": "Curated getaways for couples, honeymoons, anniversaries, or just a dreamy escape together.",
+        "icon": {
+          "url": "https://source.unsplash.com/64x64/?heart,travel"
+        }
+      },
+      "content_type_uid": "advisor_specialty",
+      "locale": "en-us"
+    },
+    {
+      "entry": {
+        "title": "Adventure Travel",
+        "description": "For thrill-seekers and nature lovers — hiking, diving, safaris, and the road less traveled.",
+        "icon": {
+          "url": "https://source.unsplash.com/64x64/?mountain,travel"
+        }
+      },
+      "content_type_uid": "advisor_specialty",
+      "locale": "en-us"
+    },
+    {
+      "entry": {
+        "title": "Family Trips",
+        "description": "Stress-free planning for the whole crew. Kid-friendly hotels, multi-gen itineraries, and fun for all.",
+        "icon": {
+          "url": "https://source.unsplash.com/64x64/?family,vacation"
+        }
+      },
+      "content_type_uid": "advisor_specialty",
+      "locale": "en-us"
+    },
+    {
+      "entry": {
+        "title": "Food & Wine",
+        "description": "For travelers who book dinner before hotels — think vineyard tastings and food tours.",
+        "icon": {
+          "url": "https://source.unsplash.com/64x64/?wine,food"
+        }
+      },
+      "content_type_uid": "advisor_specialty",
+      "locale": "en-us"
+    },
+    {
+      "entry": {
+        "title": "Luxury Hotels",
+        "description": "The best of the best. Impeccable service, beautiful design, and a concierge who knows your name.",
+        "icon": {
+          "url": "https://source.unsplash.com/64x64/?luxury,hotel"
+        }
+      },
+      "content_type_uid": "advisor_specialty",
+      "locale": "en-us"
+    }
+  ]

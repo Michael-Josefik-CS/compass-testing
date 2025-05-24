@@ -1,0 +1,13 @@
+[
+    {
+      "entry": {
+        "title": "Test Specialty",
+        "description": "This is just a simple test import.",
+        "icon": {
+          "url": "https://source.unsplash.com/64x64/?test"
+        }
+      },
+      "content_type_uid": "advisor_specialty",
+      "locale": "en-us"
+    }
+  ]
