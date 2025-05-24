@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 import styles from './Card.module.css'
 import typeStyles from '../typeStyles.module.css'
 
@@ -8,16 +9,20 @@ interface CardProps {
     region?: string;
     image?: string; // Optional, to add an image
     type?: 'button' | 'submit' | 'reset';  // Optional, default to 'button'
-    className?: string; // Optional, to add custom styles
   }
 
-const Card = ({ label, description, type = 'button', className = '', region, image }: CardProps) => {
+const Card = ({ label, description, type = 'button', region, image }: CardProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.shadowOverlay}></div>
 
       <div className={styles.imageWrapper}>
-        <img src={image} alt="compass" className={styles.image} />
+        <Image 
+          src={image ?? '/default-image.jpg'} 
+          alt="compass" 
+          layout="fill" 
+          objectFit="cover" 
+        />
       </div>
 
       <div className={styles.content}>

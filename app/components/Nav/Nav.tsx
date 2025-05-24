@@ -4,8 +4,8 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './Nav.module.css'; // Optional if you're using CSS Modules
-import Button from '../Button/Button'
-
+/* import Button from '../Button/Button'
+ */
 const Nav = () => {
 
   const handleClick = () => {
@@ -35,8 +35,9 @@ const Nav = () => {
             </li>
           </ul>
         </nav>
+        <div></div>
 
-        <Button label="Click Me" onClick={handleClick} />
+        {/* <Button label="Click Me" onClick={handleClick} /> */}
 
       </div>
     </header>

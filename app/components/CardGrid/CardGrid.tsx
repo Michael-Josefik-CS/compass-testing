@@ -2,9 +2,10 @@ import React from 'react'
 import Section from '../Section/Section';
 import Container from '../Container/Container';
 import Card from '../Card/Card';
+import type { Experience } from '@/types'; // Adjust the import based on your project structure
 
 interface CardGridProps {
-    cards: any[]; // Array of card data
+    cards: Experience[]; // Array of card data
   }
 
 const CardGrid = ({ cards }: CardGridProps) => {
