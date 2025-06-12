@@ -48,6 +48,5 @@ export interface CardProps {
 	subtitle?: string;
 	description: string;
 	image?: string;
-	type?: 'button' | 'submit' | 'reset';
 	priority?: boolean; // NEW
 }

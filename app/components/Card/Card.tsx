@@ -5,7 +5,7 @@ import { CardProps } from '../../../lib/types'; // Adjust the import path based 
 
 
 
-const Card = ({ title, description, type = 'button', subtitle, image, priority }: CardProps) => {
+const Card = ({ title, description, subtitle, image, priority }: CardProps) => {
   return (
     <div className={styles.card}>
 {/*       <div className={styles.shadowOverlay}></div>

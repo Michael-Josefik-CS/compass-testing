@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
 import styles from './Container.module.css'
 
 interface ContainerProps {
   children: React.ReactNode;
   alignment?: 'center' | 'flex-start' | 'flex-end'; // Prop to control alignment
   layout?: 'row' | 'column' | 'grid'; // Added 'grid' option for layout
-  gridColumns?: number; // Optional prop to define number of columns for grid layout
   gridColumnWidth?: number; // Optional prop to define column width for grid layout
   pad?: string; // Optional prop for padding
 }
 
-const Container = ({ children, alignment = 'flex-start', layout = 'row', gridColumns = 3, gridColumnWidth, pad = '32px' }: ContainerProps) => {
-  const [isMobile, setIsMobile] = useState(false); // State for responsive design
+const Container = ({ children, alignment = 'flex-start', layout = 'row', gridColumnWidth, pad = '32px' }: ContainerProps) => {
 
   // Use state or props to dynamically adjust styles
   const containerStyles: React.CSSProperties = {
@@ -23,22 +20,6 @@ const Container = ({ children, alignment = 'flex-start', layout = 'row', gridCol
     padding: pad ? pad : '32', // Use padding prop or default to '0 16px'
     flexGrow: 1, // Allow the container to grow
   };
-
-  // For example, adjust container layout based on screen size
-  const handleResize = () => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div style={containerStyles} className={styles.container}>

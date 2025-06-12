@@ -1,8 +1,10 @@
 'use client'; // Mark this component as a client component
 
-
 import React, { useEffect, useRef, useState } from 'react'
+
+import Image from 'next/image';
 import Link from 'next/link'
+
 import styles from './Nav.module.css'; // Optional if you're using CSS Modules
 import Button from '../Button/Button'; // Adjust the import path as necessary
 import { usePathname } from 'next/navigation';
@@ -56,9 +58,13 @@ const Nav = () => {
 
         <div className={styles.logo}>
           <Link href="/">
-            <img 
-              src="/assets/compass-logo.png" alt="Compass Travel Logo" 
+            <Image
+              src="/assets/compass-logo.png"
+              alt="Compass Travel Logo"
+              width={146}
+              height={36}
               className={styles.logoImage}
+              priority // ensures it's loaded early (important for LCP)
             />
           </Link>
         </div>

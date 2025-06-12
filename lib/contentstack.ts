@@ -1,5 +1,5 @@
 import * as contentstack from 'contentstack'
-import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
+// import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
 import ContentstackLivePreview, { IStackSdk } from '@contentstack/live-preview-utils'
 import { Destination, Homepage } from './types'
 

@@ -3,16 +3,15 @@ import React from 'react'
 import Container from '../Container/Container'
 import styles from './PageHeader.module.css'
 import Button from '../Button/Button'
-import { IoIosArrowDroprightCircle, IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 interface HeaderProps {
     title: string;
     subhead: string;
     heroImage?: string;
-    titleColor?: string;
   }
 
-const PageHeader = ({ title, subhead, heroImage, titleColor}: HeaderProps) => {
+const PageHeader = ({ title, subhead, heroImage }: HeaderProps) => {
   return (
     <section
         className={styles.headerSection}

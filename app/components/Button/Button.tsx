@@ -8,7 +8,6 @@ type ButtonProps = {
 	children: ReactNode;
 	type?: 'primary' | 'secondary' | 'tertiary' | 'link';
 	onDark?: boolean;
-	color?: boolean;
 	icon?: ReactNode;
 	iconRight?: boolean;
 	onClick?: () => void;
@@ -18,7 +17,6 @@ export default function Button({
   children,
 	type = 'primary',
 	onDark = false,
-	color = false,
 	icon,
 	iconRight = false,
 }: ButtonProps) {

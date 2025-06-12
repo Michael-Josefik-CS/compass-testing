@@ -2,8 +2,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { fetchHomepage } from "@/lib/contentstack";
-import type { Homepage, CardProps } from "@/lib/types";
-import CardGrid from "./components/CardGrid/CardGrid";
+import type { Homepage } from "@/lib/types";
 import PageHeader from "./components/PageHeader/PageHeader";
 import { mapExperiencesToCards } from "@/lib/utils";
 import CardCarousel from "./components/CardCarousel/CardCarousel";
@@ -29,7 +28,6 @@ export default function Home() {
           title={homepage.title} 
           subhead={homepage.subhead} 
           heroImage={homepage.hero_image.url} 
-          titleColor='#ffffff'
         />
         {/* <CardGrid cards={mapExperiencesToCards(homepage.top_experiences)} /> */}
         <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
