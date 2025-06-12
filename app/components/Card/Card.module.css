@@ -1,50 +1,44 @@
 .card {
     height: 400px;
-    min-width: 240px;
-    max-width: 400px;
+    min-width: 380px;
+    max-width: 520px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
-
     overflow: hidden;
     position: relative;
 
-    border-radius: 16px;
-    background: #F7F7F8;
+    border-radius: 4px;
+    border: 1px solid var(--border-default-muted, #E5E7EB);
+    background: var(--bg-default-primary);
 
     /* Raised/Light/Level 1 */
-    box-shadow: 
-        -8px -8px 16px 0px rgba(247, 246, 246, 0.80), 
-        8px 8px 16px 0px rgba(4, 33, 64, 0.15);
+    box-shadow: var(--shadow-default-level-1, 0px 2px 8px 0px rgba(0, 0, 0, 0.1));
 
-    transition: box-shadow 0.25s ease-in-out;
+    transition: all 0.16s ease-in-out;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--bg-default-primary, #FFF) 0%, var(--bg-action-highlight, #F1F2F4) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.card:hover::after {
+    opacity: .25;
 }
 
 .card:hover {
-    box-shadow: 
-        -18px -18px 28px 0px rgba(247, 246, 246, 0.80), 
-        20px 20px 32px 0px rgba(11, 58, 109, 0.15);
-}
-
-.shadowOverlay {
-    position: absolute; /* Position it absolutely over the card */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.01); /* The shadow color */
-    z-index: 1; /* Ensure it's over the image but under the content */
-    box-shadow: 
-        -2px -2px 2px 0px rgba(0, 0, 0, 0.1) inset, 
-        1px 1px 2px 0px rgba(255, 255, 255, 0.80) inset;
-    
-    transition: background 0.25s ease-in-out;
-}
-
-.card:hover .shadowOverlay {
-    background: rgba(255, 255, 255, 0.02);
+    translate: 0 -4px; /* Slightly lift the card on hover */
+    border: 1px solid var(--border-default-bold, #E5E7EB);
+    box-shadow: var(--shadow-default-level-2, 0px 4px 12px 0px rgba(0, 0, 0, 0.15));
 }
 
 .content {
@@ -53,6 +47,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    position: relative;
+    z-index: 1;
 }
 
 .headerTextWrapper {
@@ -78,6 +74,8 @@
     width: 100%;
     flex-grow: 1;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .image {
@@ -107,4 +105,12 @@
 
 .buttonWrapper p {
     display: block;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.subtitle {
+    color: var(--text-default-secondary, #4B5563);
 }

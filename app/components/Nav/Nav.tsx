@@ -1,46 +1,92 @@
 'use client'; // Mark this component as a client component
 
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import styles from './Nav.module.css'; // Optional if you're using CSS Modules
-/* import Button from '../Button/Button'
- */
+import Button from '../Button/Button'; // Adjust the import path as necessary
+import { usePathname } from 'next/navigation';
+import { NavLink } from './NavLink';
+
 const Nav = () => {
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const [showNav, setShowNav] = useState(true);
+  const [isNearTop, setIsNearTop] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setShowNav(false); // hide nav
+      } else {
+        setShowNav(true); // show nav
+      }
+
+      setIsNearTop(currentScrollY < 100);
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+
+
 
   const handleClick = () => {
     alert('Button clicked!');
   };
 
+  const onTransparent = isHome && isNearTop;
+
   return (
-    <header className={styles.header}>
+    <nav
+      className={`${styles.navSection} ${
+        isHome && isNearTop ? styles.transparent : styles.opaque
+      }`}
+      style={{
+        transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
+      }}
+    >
       <div className={styles.container}>
 
         <div className={styles.logo}>
           <Link href="/">
-            <img src="/assets/compass-logo-color.png" alt="Compass Travel Logo" className={styles.logoImage} />
+            <img 
+              src="/assets/compass-logo.png" alt="Compass Travel Logo" 
+              className={styles.logoImage}
+            />
           </Link>
         </div>
 
         <nav>
           <ul className={styles.navLinks}>
             <li>
-              <Link href="/destinations">Destinations</Link>
+              <NavLink href="/destinations" onTransparent={onTransparent}>Destinations</NavLink>
             </li>
             <li>
-              <Link href="/advisors">Advisors</Link>
+              <NavLink href="//" onTransparent={onTransparent}>Experiences</NavLink>
             </li>
             <li>
-              <Link href="/test">Test</Link>
+              <NavLink href="/advisors" onTransparent={onTransparent}>Advisors</NavLink>
+            </li>
+            <li>
+              <NavLink href="//" onTransparent={onTransparent}>Field Notes</NavLink>
             </li>
           </ul>
         </nav>
-        <div></div>
 
-        {/* <Button label="Click Me" onClick={handleClick} /> */}
+        <div className={styles.rightActions}>
+          <Button type='tertiary' onDark={onTransparent}>Log in</Button>
+          <Button type='secondary' onDark={onTransparent} onClick={handleClick}>Sign up</Button>
+        </div>
 
       </div>
-    </header>
+    </nav>
   )
 }
 

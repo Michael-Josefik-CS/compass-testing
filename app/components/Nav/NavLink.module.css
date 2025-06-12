@@ -1,0 +1,42 @@
+.link {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.3s ease;
+	line-height: 2rem; /* ensures text aligns cleanly */
+	padding: 0;
+}
+
+.link::after {
+    bottom: -8px; /* Adjust based on your font size */
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0%;
+	height: 2px;
+	background-color: currentColor;
+	opacity: 0;
+	transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+/* On hover: grow underline from center */
+.link:hover::after {
+	width: 100%;
+	opacity: 0.8;
+}
+
+/* On active page: faded full underline */
+.active::after {
+	width: 100%;
+	opacity: 0.3;
+}
+
+.onOpaque {
+	color: var(--text-default-primary);
+}
+
+.onTransparent {
+	color: var(--text-on-dark-primary);
+}

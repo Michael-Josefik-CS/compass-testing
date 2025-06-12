@@ -1,8 +1,11 @@
 import * as contentstack from 'contentstack'
 import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
 import ContentstackLivePreview, { IStackSdk } from '@contentstack/live-preview-utils'
-import { BaseEntry } from '@contentstack/delivery-sdk';
+import { Destination, Homepage } from './types'
 
+
+
+// Initialize Contentstack Delivery SDK
 export const stack = contentstack.Stack({
 	api_key: process.env.NEXT_PUBLIC_CONTENTSTACK_API_KEY! as string,
 	delivery_token: process.env.NEXT_PUBLIC_CONTENTSTACK_DELIVERY_TOKEN! as string,
@@ -12,25 +15,6 @@ export const stack = contentstack.Stack({
 		preview_token: process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW_TOKEN! as string,
 	},
 })
-
-interface Destination extends BaseEntry {
-	title: string;
-	slug: string;
-	region?: {
-		title: string;  // Assuming `region` is a reference field to the `region` content type.
-		slug: string;  // Add any other fields you need from the region
-	};
-	// Add other fields as needed, based on your content model
-}
-
-interface Homepage extends BaseEntry {
-	title: string;
-	slug: string;
-	hero_image?: {
-		url: string;  // Assuming `hero_image` is a media field
-	};
-	// Add other fields as needed, based on your content model
-}
 
 
 // Function to initialize Live Preview
@@ -50,7 +34,7 @@ export function initLivePreview() {
 		}
 	})
 }
-	
+
 
 
 // Function to fetch destinations from Contentstack
@@ -64,7 +48,7 @@ export async function fetchDestinations(): Promise<Destination[]> {
 		const [entries] = await query.find()
 
 		// Log the entries and structure to see the data you're getting
-		console.log('Fetched Entries:', JSON.stringify(entries, null, 10))
+		//console.log('Fetched Entries:', JSON.stringify(entries, null, 10))
 
 		if (!entries || entries.length === 0) {
 			console.log('No entries found for destination.')
@@ -77,13 +61,17 @@ export async function fetchDestinations(): Promise<Destination[]> {
 	}
 }
 
+
+
+
+
 // Function to fetch destinations from Contentstack
 export async function fetchHomepage(): Promise<Homepage | null> {
   try {
     const [entries] = await stack
       .ContentType('homepage')
       .Query()
-	  .includeReference('top_experiences') // Include the reference field
+	  .includeReference('top_experiences.destination') // Include the reference field
       .toJSON()
       .find();
 
@@ -93,14 +81,3 @@ export async function fetchHomepage(): Promise<Homepage | null> {
     return null;
   }
 }
-
-
-
-/* export async function getPage(url: string) {
-	const result = await stack
-		.ContentType('page')
-		.where('url', QueryOperation.EQUALS, url)
-		.includeReference('region')
-		.toJSON()
-		.find<Page>()
-} */

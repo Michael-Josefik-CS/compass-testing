@@ -1,21 +1,16 @@
 // app/page.tsx (Home page)
 'use client'
-import Link from "next/link";
-import typeStyles from './components/typeStyles.module.css'
-
-import Video from 'next-video';
-import beach from '../public/_next-video/Beach.mp4';
-import Header from "./components/Homepage/Header/Header";
 import { useEffect, useState } from "react";
 import { fetchHomepage } from "@/lib/contentstack";
-import Section from "./components/Section/Section";
-import Container from "./components/Container/Container";
+import type { Homepage, CardProps } from "@/lib/types";
 import CardGrid from "./components/CardGrid/CardGrid";
-import Card from "./components/Card/Card";
+import PageHeader from "./components/PageHeader/PageHeader";
+import { mapExperiencesToCards } from "@/lib/utils";
+import CardCarousel from "./components/CardCarousel/CardCarousel";
 
 
 export default function Home() {
-  const [homepage, setHomepage] = useState<any | null>(null)
+  const [homepage, setHomepage] = useState<Homepage | null>(null)
   
     useEffect(() => {
       async function loadHomepage() {
@@ -30,13 +25,15 @@ export default function Home() {
     <>
     {homepage ? (
       <>
-        <Header 
+        <PageHeader 
           title={homepage.title} 
           subhead={homepage.subhead} 
           heroImage={homepage.hero_image.url} 
           titleColor='#ffffff'
         />
-        <CardGrid cards={homepage.top_experiences} />
+        {/* <CardGrid cards={mapExperiencesToCards(homepage.top_experiences)} /> */}
+        <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
+        <CardCarousel align="end" cards={mapExperiencesToCards(homepage.top_experiences)}/>
       </>
     ) : (
       <p>Loading homepage content...</p>

@@ -1,0 +1,105 @@
+.headerSection {
+	padding-top: 112px; /* Adjust for fixed header height */
+	height: 100vh;
+	max-height: 1080px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	position: relative; /* required for absolute positioning inside */
+}
+
+.headerSection::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 32px;
+	flex: 1 0 0;
+}
+.right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 360px;
+	max-width: 600px;
+	z-index: 2; /* Ensure content is above the overlay */
+}
+
+.headerText {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--Spacing-none, 0px);
+
+	color: var(--text-on-dark-primary);
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+
+/* 	color: var(--text-reversed-primary);
+ */}
+
+/* Make sure your content is above the overlay */
+.headerSection > * {
+	position: relative;
+	z-index: 2;
+}
+
+
+.headerContent {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 16px;
+	flex-grow: 1;
+	height: 100%;
+}
+
+.headerScroller {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	width: 100%;
+	flex-shrink: 0;
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+
+.srollLineContainer {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	width: 100%;
+}
+.scrollerLeft {
+	align-items: flex-end;
+}
+.scrollerRight {
+	align-items: flex-start;
+}
+
+.scrollerLine {
+	width: 30%;
+	height: 2px;
+	background-color: var(--bg-on-dark-idle);
+	opacity: 0.3;
+	transition: all 0.3s ease;
+}
+
+.headerScroller:hover .scrollerLine {
+	opacity: 0.6;
+	width: 100%;
+}

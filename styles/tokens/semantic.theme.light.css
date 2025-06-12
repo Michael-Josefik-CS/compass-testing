@@ -1,0 +1,93 @@
+
+:root {
+
+    /* BACKGROUNDS -------------------*/
+
+    /* Default */
+    --bg-default-primary: var(--white-100);
+    --bg-default-secondary: var(--neutral-100);
+    --bg-default-tertiary: var(--neutral-200);
+    --bg-default-highlight: var(--black-15);
+
+    /* On Light */
+    --bg-on-light-idle: var(--black-85);
+    --bg-on-light-hover: var(--black-100);
+    --bg-on-light-active: var(--black-70);
+    --bg-on-light-highlight: var(--black-15);
+
+    /* On Dark */
+    --bg-on-dark-idle: var(--white-85);
+    --bg-on-dark-hover: var(--white-100);
+    --bg-on-dark-active: var(--white-70);
+    --bg-on-dark-highlight: var(--white-15);
+
+    /* Action */
+    --bg-action-primary: var(--brand-600);
+    --bg-action-secondary: var(--brand-300);
+    --bg-action-hover: var(--brand-700);
+    --bg-action-active: var(--brand-500);
+    --bg-action-highlight: var(--brand-transparent-100);
+
+
+    /* BORDERS -------------------*/
+
+    /* Default */
+    --border-default-muted: var(--neutral-400);
+    --border-default-bold: var(--neutral-500);
+
+    /* Action */
+    --border-action-muted: var(--brand-300);
+    --border-action-bold: var(--brand-400);
+
+    /* On Light */
+    --border-on-light-muted: var(--black-60);
+    --border-on-light-bold: var(--black-85);
+
+    /* On Dark */
+    --border-on-dark-muted: var(--white-60);
+    --border-on-dark-bold: var(--white-95);
+
+
+
+    /* TEXT -------------------*/
+
+    /* Default */
+    --text-default-primary: var(--black-95);
+    --text-default-secondary: var(--black-70);
+    --text-default-disabled: var(--black-60);
+
+    /* Inverse */
+    --text-inverse-primary: var(--white-95);
+    --text-inverse-secondary: var(--white-70);
+    --text-inverse-disabled: var(--white-60);
+
+    /* On Dark */
+    --text-on-dark-primary: var(--white-95);
+    --text-on-dark-secondary: var(--white-70);
+    --text-on-dark-disabled: var(--white-60);
+
+    /* On Light */
+    --text-on-light-primary: var(--black-95);
+    --text-on-light-secondary: var(--black-70);
+    --text-on-light-disabled: var(--black-60);
+
+    /* Brand */
+    --text-brand-primary: var(--brand-700);
+    --text-brand-hover: var(--brand-800);
+    --text-brand-active: var(--brand-600);
+
+
+    /* SHADOWS -------------------*/
+
+    /* Regular */
+    --shadow-regular-level-1: hsla(228, 45%, 2%, 0.1);
+
+    /* Action */
+    --shadow-action-level-1: hsla(214, 75%, 25%, 0.15);
+
+
+    /* UTILITIES -------------------*/
+
+    --util-image-overlay: hsla(0, 0%, 0%, 1);
+
+}

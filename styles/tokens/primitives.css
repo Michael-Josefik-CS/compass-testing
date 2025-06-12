@@ -1,0 +1,87 @@
+/* primitives.css */
+
+:root {
+  /* Brand */
+  --brand-200: hsla(214, 44%, 94%, 1);
+  --brand-300: hsla(214, 42%, 74%, 1);
+  --brand-400: hsla(214, 42%, 63%, 1);
+  --brand-500: hsla(214, 48%, 47%, 1);
+  --brand-600: hsla(214, 75%, 36%, 1);
+  --brand-700: hsla(214, 75%, 25%, 1);
+  --brand-800: hsla(214, 75%, 22%, 1);
+
+  /* Brand Transparent */
+  --brand-transparent-100: hsla(214, 75%, 36%, 0.15);
+  --brand-transparent-200: hsla(214, 75%, 36%, 0.3);
+  --brand-transparent-300: hsla(214, 75%, 36%, 0.6);
+  --brand-transparent-400: hsla(214, 75%, 36%, 0.7);
+  --brand-transparent-500: hsla(214, 75%, 36%, 0.8);
+  --brand-transparent-600: hsla(214, 75%, 36%, 0.98);
+
+  /* White */
+  --white-100: hsla(0, 0%, 100%, 1);
+  --white-95: hsla(0, 0%, 100%, 0.95);
+  --white-85: hsla(0, 0%, 100%, 0.85);
+  --white-70: hsla(0, 0%, 100%, 0.7);
+  --white-60: hsla(0, 0%, 100%, 0.6);
+  --white-15: hsla(0, 0%, 100%, 0.15);
+
+  /* Black */
+  --black-100: hsla(0, 0%, 0%, 1);
+  --black-95: hsla(0, 0%, 0%, 0.95);
+  --black-85: hsla(0, 0%, 0%, 0.85);
+  --black-70: hsla(0, 0%, 0%, 0.7);
+  --black-60: hsla(0, 0%, 0%, 0.6);
+  --black-15: hsla(0, 0%, 0%, 0.15);
+  --black-10: hsla(0, 0%, 0%, 0.1);
+
+  /* Neutral */
+  --neutral-100: hsla(220, 10%, 95%, 1);
+  --neutral-200: hsla(220, 11%, 92%, 1);
+  --neutral-300: hsla(218, 10%, 84%, 1);
+  --neutral-400: hsla(219, 9%, 71%, 1);
+  --neutral-500: hsla(221, 10%, 57%, 1);
+  --neutral-600: hsla(221, 10%, 44%, 1);
+  --neutral-700: hsla(225, 10%, 30%, 1);
+  --neutral-800: hsla(225, 10%, 16%, 1);
+  --neutral-900: hsla(220, 10%, 12%, 1);
+  --neutral-1000: hsla(225, 11%, 6%, 1);
+
+
+  --font-league-spartan: 'League Spartan', sans-serif;
+  --font-source-sans-3: 'Source Sans 3', sans-serif;
+
+  --font-weight-regular: 300;
+  --font-weight-medium: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
+
+  --font-sise-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-md: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+  --font-size-5xl: 4rem;      /* 64px */
+
+  --font-line-height-xs: 1rem;    /* 16px */
+  --font-line-height-sm: 1.25rem; /* 20px */
+  --font-line-height-md: 1.5rem;   /* 24px */
+  --font-line-height-lg: 1.75rem; /* 28px */
+  --font-line-height-xl: 2.25rem;  /* 36px */
+  --font-line-height-2xl: 2.75rem; /* 44px */
+  --font-line-height-3xl: 4rem;   /* 64px */
+
+/* LETTER SPACING -------------------*/
+--font-letter-spacing-xs: -0.01em;   /* ~-0.16px at 16px = -1% */
+--font-letter-spacing-sm:  0em;      /* 0px = 0% */
+--font-letter-spacing-md:  0.01em;   /* ~0.16px = 1% */
+--font-letter-spacing-lg:  0.015em;  /* ~0.24px = 1.5% */
+--font-letter-spacing-xl:  0.02em;   /* ~0.32px = 2% */
+
+
+
+
+}

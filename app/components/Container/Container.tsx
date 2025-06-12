@@ -21,6 +21,7 @@ const Container = ({ children, alignment = 'flex-start', layout = 'row', gridCol
     gridTemplateColumns: layout === 'grid' ? `repeat(auto-fill, minmax(min(${gridColumnWidth}px, 100%), 1fr))` : 'unset', // Define grid columns dynamically
     gap: '32px',
     padding: pad ? pad : '32', // Use padding prop or default to '0 16px'
+    flexGrow: 1, // Allow the container to grow
   };
 
   // For example, adjust container layout based on screen size

@@ -1,18 +1,105 @@
-/* components/Button/Button.module.css */
 .button {
-    display: flex;
-    padding: 8px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+  height: var(--spacing-3xl);
+	padding: var(--spacing-md) var(--spacing-lg);
+	border-radius: 0.375rem;
+	font-weight: 500;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	transition: background-color 0.4s ease-in-out;
+	border: none;
+	cursor: pointer;
 
-    color: white;
-    border-radius: 4px;
-    border: 1px solid #8A9BC0;
-    background: #4564A5;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.20);
-  }
-  
-  .button:hover {
-    background-color: hsla(221, 41%, 40%, 1);
-  }
+  box-shadow: var(--shadow-default-level-1);
+}
+
+.label {
+	display: inline-block;
+}
+
+/* Optional, makes sure icons don't shrink */
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+  width: 1.5rem;   /* ~20px */
+	height: 1.5rem;
+	font-size: 1.5rem; /* <- This is important */
+}
+
+.button:hover {
+  box-shadow: var(--shadow-default-level-2);
+}
+
+
+
+/* Primary Variants —————— */
+.btnPrimary {
+	background-color: var(--bg-on-dark-idle);
+	color: var(--text-reversed-primary);
+}
+
+.btnPrimary:hover {
+	background-color: var(--text-default-secondary);
+}
+
+.btnPrimaryOnDark {
+	background-color: var(--bg-on-dark-idle);
+	color: var(--text-on-light-secondary);
+}
+
+.btnPrimaryOnDark:hover {
+	background-color: var(--bg-on-dark-hover);
+	color: var(--text-on-light-primary);
+
+}
+
+
+
+/* Secondary Variants —————— */
+.btnSecondary {
+	background-color: transparent;
+	color: var(--text-on-light-primary);
+	border: var(--border-on-light-muted) 2px solid;
+}
+
+.btnSecondary:hover {
+	background-color: var(--bg-on-light-highlight);
+	border: var(--border-on-light-bold) 2px solid;
+}
+
+.btnSecondaryOnDark {
+	background-color: transparent;
+	color: var(--text-on-dark-primary);
+	border: var(--border-on-dark-muted) 2px solid;
+}
+
+.btnSecondaryOnDark:hover {
+	background-color: var(--bg-on-dark-highlight);
+	border: var(--border-on-dark-bold) 2px solid;
+}
+
+
+/* Tertiary Variants —————— */
+.btnTertiary {
+	background-color: transparent;
+	color: var(--text-default-primary);
+  box-shadow: none;
+}
+
+.btnTertiary:hover {
+	opacity: 0.8;
+}
+
+.btnTertiaryOnDark {
+	background-color: transparent;
+	color: var(--text-on-dark-primary);
+  box-shadow: none;
+}
+
+.btnTertiaryOnDark:hover {
+  background-color: var(--bg-on-dark-highlight);
+}
