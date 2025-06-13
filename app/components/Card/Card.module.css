@@ -64,8 +64,8 @@
     justify-content: space-between;
 }
 
-.secodary {
-    color: hsla(220, 30%, 18%, .6);
+.shortDescription {
+    color: var(--text-default-secondary);
 }
 
 

@@ -11,31 +11,31 @@
   --brand-800: hsla(214, 75%, 22%, 1);
 
   /* Brand Transparent */
-  --brand-transparent-100: hsla(214, 75%, 36%, 0.15);
-  --brand-transparent-200: hsla(214, 75%, 36%, 0.3);
-  --brand-transparent-300: hsla(214, 75%, 36%, 0.6);
-  --brand-transparent-400: hsla(214, 75%, 36%, 0.7);
-  --brand-transparent-500: hsla(214, 75%, 36%, 0.8);
-  --brand-transparent-600: hsla(214, 75%, 36%, 0.98);
+  --transparent-brand-level-1: hsla(214, 75%, 36%, 0.15);
+  --transparent-brand-level-2: hsla(214, 75%, 36%, 0.3);
+  --transparent-brand-level-3: hsla(214, 75%, 36%, 0.6);
+  --transparent-brand-level-4: hsla(214, 75%, 36%, 0.7);
+  --transparent-brand-level-5: hsla(214, 75%, 36%, 0.8);
+  --transparent-brand-level-6: hsla(214, 75%, 36%, 0.98);
 
   /* White */
-  --white-100: hsla(0, 0%, 100%, 1);
-  --white-95: hsla(0, 0%, 100%, 0.95);
-  --white-85: hsla(0, 0%, 100%, 0.85);
-  --white-70: hsla(0, 0%, 100%, 0.7);
-  --white-60: hsla(0, 0%, 100%, 0.6);
-  --white-15: hsla(0, 0%, 100%, 0.15);
+  --transparent-white-level-1: hsla(0, 0%, 100%, 0.05);
+  --transparent-white-level-2: hsla(0, 0%, 100%, 0.15);
+  --transparent-white-level-3: hsla(0, 0%, 100%, 0.40);
+  --transparent-white-level-4: hsla(0, 0%, 100%, 0.50);
+  --transparent-white-level-5: hsla(0, 0%, 100%, 0.65);
+  --transparent-white-level-6: hsla(0, 0%, 100%, 0.95);
 
   /* Black */
-  --black-100: hsla(0, 0%, 0%, 1);
-  --black-95: hsla(0, 0%, 0%, 0.95);
-  --black-85: hsla(0, 0%, 0%, 0.85);
-  --black-70: hsla(0, 0%, 0%, 0.7);
-  --black-60: hsla(0, 0%, 0%, 0.6);
-  --black-15: hsla(0, 0%, 0%, 0.15);
-  --black-10: hsla(0, 0%, 0%, 0.1);
+  --transparent-black-level-1: hsla(0, 0%, 0%, 0.05);
+  --transparent-black-level-2: hsla(0, 0%, 0%, 0.15);
+  --transparent-black-level-3: hsla(0, 0%, 0%, 0.40);
+  --transparent-black-level-4: hsla(0, 0%, 0%, 0.60);
+  --transparent-black-level-5: hsla(0, 0%, 0%, 0.75);
+  --transparent-black-level-6: hsla(0, 0%, 0%, 0.95);
 
   /* Neutral */
+  --white: hsla(0, 0%, 100%, 1);
   --neutral-100: hsla(220, 10%, 95%, 1);
   --neutral-200: hsla(220, 11%, 92%, 1);
   --neutral-300: hsla(218, 10%, 84%, 1);
@@ -46,6 +46,7 @@
   --neutral-800: hsla(225, 10%, 16%, 1);
   --neutral-900: hsla(220, 10%, 12%, 1);
   --neutral-1000: hsla(225, 11%, 6%, 1);
+  --black: hsla(0, 0%, 0%, 1);
 
 
 /* FONT FAMILIES -------------------*/

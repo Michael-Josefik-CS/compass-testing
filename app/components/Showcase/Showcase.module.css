@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1440px;
+    max-width: 1440px;
+    padding-inline: 32px;
+
+    height: 540px; /* TESTING */
+}

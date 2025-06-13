@@ -28,7 +28,7 @@ const Card = ({ title, description, subtitle, image, priority }: CardProps) => {
         </div>
 
         <div className={styles.details}>
-          <p className={styles.secodary}>{description}</p>
+          <p className={styles.shortDescription}>{description}</p>
           <div className={styles.buttonWrapper}>
             <p className={`button-text-md`}>Discover More</p>
           </div>

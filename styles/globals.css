@@ -45,7 +45,8 @@
 
 body {
   font-family: "Source Sans 3", sans-serif;
-  background-color: var(--surface-primary);
+  background-color: var(--bg-default-primary);
+  color: var(--text-default-primary);
 }
 
 html, body {
@@ -162,7 +163,7 @@ html, body {
   font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
   font-size: 1.25rem;      /* 20px */
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.125rem;   /* 18px */
   letter-spacing: 0.0125rem; /* 0.2px */
 }

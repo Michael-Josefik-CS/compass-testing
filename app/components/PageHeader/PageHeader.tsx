@@ -1,47 +1,63 @@
 'use client'
 import React from 'react'
-import Container from '../Container/Container'
 import styles from './PageHeader.module.css'
 import Button from '../Button/Button'
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { FaFacebook, FaInstagram, FaTripadvisor } from "react-icons/fa";
+import SocialButton from '../Homepage/SocialButton';
+import ScrollerButton from './ScrollerButton';
 
 interface HeaderProps {
     title: string;
     subhead: string;
-    heroImage?: string;
-  }
+    isHomepage?: boolean; // Optional prop to apply homepage items
+    scrollLinks?: { label: string; section: string }[];
+}
 
-const PageHeader = ({ title, subhead, heroImage }: HeaderProps) => {
+const PageHeader = ({ title, subhead, isHomepage, scrollLinks }: HeaderProps) => {
+    const icons = [FaFacebook, FaTripadvisor, FaInstagram];
+
+{isHomepage && (
+  <div className={styles.socialButtons}>
+    {icons.map((Icon, index) => (
+      <SocialButton key={index} icon={<Icon />} />
+    ))}
+  </div>
+)}
   return (
-    <section
-        className={styles.headerSection}
-        style={heroImage ? { backgroundImage: `url(${heroImage})` } : undefined}
-    >
-        <Container alignment='flex-start' layout='column' gridColumnWidth={275} pad='0 32px'>
-            <div className={styles.headerContent}>
-                <div className={styles.left}>
-                    <div className={styles.headerText}>
-                        <h1 className="display-large">{title}</h1>
-                        <h2 className="body-xl">{subhead}</h2>
+    <>
+        <div className={styles.headerWrapper}>
+            <div className={styles.left}>
+                <div className={styles.headerText}>
+                    <h1 className="display-large">{title}</h1>
+                    <h2 className="body-xl">{subhead}</h2>
+                </div>
+                <Button onDark={true} iconRight={true} icon={<IoIosArrowDroprightCircle />}>Book now</Button>
+            </div>
+            <div className={styles.right}>
+                {isHomepage && (
+                    <div className={styles.socialButtons}>
+                        {icons.map((Icon, index) => (
+                        <SocialButton key={index} icon={<Icon />} />
+                        ))}
                     </div>
-                    <Button onDark={true} iconRight={true} icon={<IoIosArrowDroprightCircle />}>Book now</Button>
-                </div>
-                <div className={styles.right}>
-                    
-                </div>
+                    )}
             </div>
-            <div className={styles.headerScroller}>
-                <div className={styles.srollLineContainer} style={{ justifyContent: 'flex-end' }}>
-                    <div className={styles.scrollerLine}></div>
-                </div>
-                <div>This is text</div>
-                <div className={styles.srollLineContainer}>
-                    <div className={styles.scrollerLine}></div>
-                </div>
+        </div>
+        <div className={styles.headerScroller}>
+            <div className={styles.srollLineContainer} style={{ justifyContent: 'flex-end' }}>
+                <div className={styles.scrollerLine}></div>
             </div>
-        </Container>
-    </section>
-    
+            <div className={styles.scrollerButtons}>
+              {scrollLinks?.map((link, index) => (
+  <ScrollerButton key={index} label={link.label} section={link.section} />
+))}
+            </div>
+            <div className={styles.srollLineContainer}>
+                <div className={styles.scrollerLine}></div>
+            </div>
+        </div>
+    </>
   )
 }
 

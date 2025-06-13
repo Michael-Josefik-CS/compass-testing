@@ -20,7 +20,7 @@
 }
 
 .opaque {
-    background-color: var(--white-85);
+    background-color: var(--bg-default-primary);
     box-shadow: var(--shadow-default-level-2);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px); /* for Safari support */
@@ -64,7 +64,7 @@
 }
 
 .rightActions {
-    width: 240px; /* Fixed width for the right section */
+    width: 320px; /* Fixed width for the right section */
     display: flex;
     align-items: right;
     gap: 16px;

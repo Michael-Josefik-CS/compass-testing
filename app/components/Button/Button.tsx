@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { ReactNode } from 'react';
 
 type ButtonProps = {
-	children: ReactNode;
+	children?: ReactNode;
 	type?: 'primary' | 'secondary' | 'tertiary' | 'link';
 	onDark?: boolean;
 	icon?: ReactNode;
@@ -19,6 +19,7 @@ export default function Button({
 	onDark = false,
 	icon,
 	iconRight = false,
+	onClick = () => {}, // Default to no-op if not provided
 }: ButtonProps) {
 	const variantKey = `btn${type.charAt(0).toUpperCase() + type.slice(1)}${onDark ? 'OnDark' : ''}`;
   const classes = classNames(
@@ -27,9 +28,9 @@ export default function Button({
   );
 
 	return (
-		<button className={classes}>
+		<button className={classes} onClick={onClick} type="button">
 			{!iconRight && icon && <span className={styles.icon}>{icon}</span>}
-			<span className={`${styles.label} button-text-md`}>{children}</span>
+			{children && <span className={`${styles.label} button-text-md`}>{children}</span>}
 			{iconRight && icon && <span className={styles.icon}>{icon}</span>}
 		</button>
 	);

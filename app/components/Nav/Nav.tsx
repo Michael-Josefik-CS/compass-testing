@@ -9,9 +9,12 @@ import styles from './Nav.module.css'; // Optional if you're using CSS Modules
 import Button from '../Button/Button'; // Adjust the import path as necessary
 import { usePathname } from 'next/navigation';
 import { NavLink } from './NavLink';
+import { useTheme } from '@/app/context/ThemeContext';
+import { CgDarkMode } from "react-icons/cg";
 
 const Nav = () => {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme()
   const isHome = pathname === '/';
 
   const [showNav, setShowNav] = useState(true);
@@ -59,7 +62,7 @@ const Nav = () => {
         <div className={styles.logo}>
           <Link href="/">
             <Image
-              src="/assets/compass-logo.png"
+              src={onTransparent ? "/assets/compass-logo.png" : "/assets/compass-logo-color.png"}
               alt="Compass Travel Logo"
               width={146}
               height={36}
@@ -69,7 +72,7 @@ const Nav = () => {
           </Link>
         </div>
 
-        <nav>
+        <div className={styles.navLinksWrapper}>
           <ul className={styles.navLinks}>
             <li>
               <NavLink href="/destinations" onTransparent={onTransparent}>Destinations</NavLink>
@@ -84,9 +87,10 @@ const Nav = () => {
               <NavLink href="//" onTransparent={onTransparent}>Field Notes</NavLink>
             </li>
           </ul>
-        </nav>
+        </div>
 
         <div className={styles.rightActions}>
+          <Button type='tertiary' onDark={onTransparent} icon={<CgDarkMode />} iconRight={true} onClick={toggleTheme} />
           <Button type='tertiary' onDark={onTransparent}>Log in</Button>
           <Button type='secondary' onDark={onTransparent} onClick={handleClick}>Sign up</Button>
         </div>

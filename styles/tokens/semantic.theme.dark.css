@@ -11,12 +11,12 @@
     --border-action-bold: var(--brand-500);
 
     /* On Light */
-    --border-on-light-muted: var(--neutral-400);
-    --border-on-light-bold: var(--neutral-500);
+    --border-on-light-muted: var(--transparent-black-level-3);
+    --border-on-light-bold: var(--transparent-black-level-4);
 
     /* On Dark */
-    --border-on-dark-muted: var(--white-60);
-    --border-on-dark-bold: var(--white-95);
+    --border-on-dark-muted: var(--transparent-white-level-3);
+    --border-on-dark-bold: var(--transparent-white-level-4);
 
 
     
@@ -29,48 +29,47 @@
     --bg-default-highlight: var(--white-15);
 
     /* On Light */
-    --bg-on-light-idle: var(--black-85);
-    --bg-on-light-hover: var(--black-100);
-    --bg-on-light-active: var(--black-70);
-    --bg-on-light-highlight: var(--black-15);
-
+    --bg-on-light-idle: var(--transparent-black-level-6);
+    --bg-on-light-hover: var(--transparent-black-level-5);
+    --bg-on-light-active: var(--transparent-black-level-4);
+    --bg-on-light-highlight: var(--transparent-black-level-1);
+    
     /* On Dark */
-    --bg-on-dark-idle: var(--white-85);
-    --bg-on-dark-hover: var(--white-100);
-    --bg-on-dark-active: var(--white-70);
-    --bg-on-dark-highlight: var(--white-15);
+    --bg-on-dark-idle: var(--transparent-white-level-6);
+    --bg-on-dark-hover: var(--transparent-white-level-5);
+    --bg-on-dark-active: var(--transparent-white-level-4);
+    --bg-on-dark-highlight: var(--transparent-white-level-1);
 
     /* Action */
     --bg-action-primary: var(--brand-500);
     --bg-action-secondary: var(--brand-700);
     --bg-action-hover: var(--brand-800);
     --bg-action-active: var(--brand-400);
-    --bg-action-highlight: var(--brand-transparent-15);
-
+    --bg-action-highlight: var(--transparent-brand-level-1);
 
 
 
     /* TEXT -------------------*/
 
     /* Default */
-    --text-default-primary: var(--black-95);
-    --text-default-secondary: var(--black-70);
-    --text-default-disabled: var(--black-60);
-
+    --text-default-primary: var(--transparent-white-level-6);
+    --text-default-secondary: var(--transparent-white-level-5);
+    --text-default-disabled: var(--transparent-white-level-4);
+    
     /* Inverse */
-    --text-inverse-primary: var(--white-95);
-    --text-inverse-secondary: var(--white-70);
-    --text-inverse-disabled: var(--white-60);
-
+    --text-inverse-primary: var(--transparent-black-level-6);
+    --text-inverse-secondary: var(--transparent-black-level-5);
+    --text-inverse-disabled: var(--transparent-black-level-4);
+    
     /* On Dark */
-    --text-on-dark-primary: hsla(0, 0%, 100%, 0.95);
-    --text-on-dark-secondary: hsla(0, 0%, 100%, 0.75);
-    --text-on-dark-disabled: hsla(0, 0%, 100%, 0.5);
-
+    --text-on-dark-primary: var(--transparent-white-level-6);
+    --text-on-dark-secondary: var(--transparent-white-level-5);
+    --text-on-dark-disabled: var(--transparent-white-level-4);
+    
     /* On Light */
-    --text-on-light-primary: hsla(0, 0%, 0%, 0.95);
-    --text-on-light-secondary: hsla(0, 0%, 0%, 0.75);
-    --text-on-light-disabled: hsla(0, 0%, 0%, 0.5);
+    --text-on-light-primary: var(--transparent-black-level-6);
+    --text-on-light-secondary: var(--transparent-black-level-5);
+    --text-on-light-disabled: var(--transparent-black-level-4);
 
     /* Brand */
     --text-brand-primary: var(--brand-500);
@@ -82,7 +81,7 @@
     /* SHADOWS -------------------*/
 
     /* Regular */
-    --shadow-regular-level-1: hsla(0, 0%, 0%, 0.5);
+    --shadow-regular-level-1: var(--transparent-black-level-2);
 
     /* Action */
     --shadow-action-level-1: hsla(214, 75%, 36%, 0.2);

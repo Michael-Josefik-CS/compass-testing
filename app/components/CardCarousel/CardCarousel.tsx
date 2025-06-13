@@ -27,33 +27,31 @@ const CardCarousel = ({ cards, align }: CardCarouselProps) => {
 
 
   return (
-    <section className={styles.carouselSection}>
-        <div className={styles.carouselContainer}>
+    <div className={styles.carouselContainer}>
 
-            <div className={styles.carouselHeader}>
-                <h2 className="heading-h2">Top Regional Advisors</h2>
-                <a href="#" className="seeAllLink">See all</a>
-            </div>
-
-            <div className={styles.embla}>
-                <div className={styles.emblaViewport} ref={emblaRef}>
-                    <div className={styles.emblaContainer}>
-                        {cards.map((card) => (
-                            <div className={styles.emblaSlide} key={card.key}>
-                                <Card
-                                    title={card.title}
-                                    subtitle={card.subtitle}
-                                    description={card.description}
-                                    image={card.image}
-                                    priority={card.priority}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                 </div>
-            </div>
+        <div className={styles.carouselHeader}>
+            <h2 className="heading-h2" style={{ color: `var(--text-default-primary)`}}>Top Regional Advisors</h2>
+            <a href="#" className="seeAllLink">See all</a>
         </div>
-    </section>
+
+        <div className={styles.embla}>
+            <div className={styles.emblaViewport} ref={emblaRef}>
+                <div className={styles.emblaContainer}>
+                    {cards.map((card) => (
+                        <div className={styles.emblaSlide} key={card.key}>
+                            <Card
+                                title={card.title}
+                                subtitle={card.subtitle}
+                                description={card.description}
+                                image={card.image}
+                                priority={card.priority}
+                            />
+                        </div>
+                    ))}
+                </div>
+             </div>
+        </div>
+    </div>
   )
 }
 
