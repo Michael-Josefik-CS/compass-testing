@@ -38,7 +38,7 @@ export default function Home() {
           />
         </Section>
 
-        <Section header="Top Experiences" bgLevel="secondary">
+        <Section id="top-experiences" bgLevel="secondary">
           <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
 
@@ -50,7 +50,7 @@ export default function Home() {
           <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
         <Section>
-          <Showcase></Showcase>
+          <Showcase image={homepage.hero_image.url}></Showcase>
         </Section>
 
       </>

@@ -10,13 +10,11 @@ interface SectionProps {
   image?: string; // Optional prop for background image
   height?: string; // Optional prop for height override
   vSpacingOverride?: string; // Optional prop for vertical spacing override
-  header?: string; // Optional prop to apply room for nav
+  header?: boolean; // Optional prop to apply room for nav
   id?: string; // Optional prop for section ID
 }
 
 const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacingOverride, id }: SectionProps) => {
-  const generatedId = id || (typeof header === 'string' ? header.toLowerCase().replace(/\s+/g, '-') : undefined);
-
   const classes = classNames(
     styles.section,
     bgLevel && styles[`bg${bgLevel.charAt(0).toUpperCase() + bgLevel.slice(1)}`],
@@ -27,12 +25,12 @@ const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacing
   const contentClasses = classNames(
     styles.content,
     height && styles.fullHeight,
-    !!header && styles.navPadding,
+    header && styles.navPadding,
   );
 
   return (
     <section 
-      id={generatedId}
+      id={id}
       className={classes} 
       style={{
         ...(vSpacingOverride && { paddingBlock: `${vSpacingOverride}` }),
@@ -42,7 +40,6 @@ const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacing
     >
       <div className={contentClasses}>
         <Container verticalStretch={!!height}>
-          {header && <h2>{header}</h2>}
           {children}
         </Container>
       </div>

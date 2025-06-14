@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Showcase.module.css'
+import classNames from 'classnames';
 
 interface ShowcaseProps {
   bgBranded?: boolean; // Optional prop to apply brand styles
@@ -10,9 +11,26 @@ interface ShowcaseProps {
   buttonsCount?: 1 | 2; // Optional prop to control number of buttons
 }
 
-const Showcase = () => {
+const Showcase = ({bgBranded, image, headline, subhead, copy, buttonsCount}: ShowcaseProps) => {
+  const classes = classNames(
+    styles.wrapper,
+    image && styles.withImage,
+  );
+
+  
   return (
-    <div className={styles.container}>Showcase</div>
+    <div 
+      className={classes}
+      style={{
+        ...(image && { backgroundImage: `url(${image})` }),
+      }}
+    >
+      Showcase
+    </div>
+
+
+
+
   )
 }
 
