@@ -38,7 +38,12 @@ const CardCarousel = ({ cards, align }: CardCarouselProps) => {
             <div className={styles.emblaViewport} ref={emblaRef}>
                 <div className={styles.emblaContainer}>
                     {cards.map((card) => (
-                        <div className={styles.emblaSlide} key={card.key}>
+                        <div
+                          className={styles.emblaSlide}
+                          key={card.uid}
+                          data-cslp
+                          data-sys-entry-uid={card.uid}
+                        >
                             <Card
                                 title={card.title}
                                 subtitle={card.subtitle}

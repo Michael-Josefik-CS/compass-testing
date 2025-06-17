@@ -4,12 +4,13 @@
 import { useEffect, useState } from "react";
 import { fetchHomepage } from "@/lib/contentstack";
 import type { Homepage } from "@/lib/types";
-import { mapExperiencesToCards } from "@/lib/utils";
+import { mapExperiencesToCards, mapShowcaseToShowcase } from "@/lib/utils";
 
 import Section from "./components/Section/Section";
 import PageHeader from "./components/PageHeader/PageHeader";
 import CardCarousel from "./components/CardCarousel/CardCarousel";
 import Showcase from "./components/Showcase/Showcase";
+import Button from "./components/Button/Button";
 
 
 export default function Home() {
@@ -24,6 +25,11 @@ export default function Home() {
   
       loadHomepage()
     }, [])
+
+  const showcases = homepage?.showcase
+  ? mapShowcaseToShowcase(homepage.showcase)
+  : [];
+    
   return (
     <>
     {homepage ? (
@@ -38,19 +44,22 @@ export default function Home() {
           />
         </Section>
 
-        <Section id="top-experiences" bgLevel="secondary">
+        <Section id="top-experiences" bgLevel="secondary" faded={true}>
           <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
 
-        <Section bgLevel="secondary">
+        {showcases.map((showcase, i) => (
+          <Section key={`showcase-${i}`}>
+            <Showcase {...showcase} />
+          </Section>
+        ))}
+
+        <Section bgLevel="primary">
           <CardCarousel align="end" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
 
         <Section id="different" bgLevel="secondary">
           <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
-        </Section>
-        <Section>
-          <Showcase image={homepage.hero_image.url}></Showcase>
         </Section>
 
       </>

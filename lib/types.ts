@@ -23,19 +23,20 @@ export interface Homepage extends BaseEntry {
   subhead: string;
   hero_image: { url: string };
   top_experiences: Experience[];
+  showcase: ShowcaseProps[];
 }
 
 export interface Destination extends BaseEntry {
   title: string;
-  description: string;
+  intro_blurb: string;
   slug: string;
   hero_image?: {
 	url: string; // Assuming `hero_image` is a media field
   };
-  region?: {
+  region?: [{
 	title: string;
 	slug: string;
-  };
+  }];
 }
 
 
@@ -43,10 +44,23 @@ export interface Destination extends BaseEntry {
 
 // COMPONENT TYPES
 export interface CardProps {
-	key?: string;
+	uid?: string;
 	title: string;
 	subtitle?: string;
 	description: string;
 	image?: string;
 	priority?: boolean; // NEW
+}
+
+export interface ShowcaseProps {
+  split?: boolean; // Optional prop to indicate if the layout is split
+  bgBranded?: boolean; // Optional prop to apply brand styles
+  image?: string; // Optional prop for background image
+  headline?: string; // Optional prop for headline text
+  subhead?: string; // Optional prop for subheadline text
+  copy?: string; // Optional prop for additional copy text
+  buttonContent?: { label: string; url: string }[];
+  height?: string; // Optional prop for height override
+  flip?: boolean; // Optional prop to flip the layout order
+  bgColor?: 'branded' | 'primary' | 'secondary'; // Optional prop for background color
 }

@@ -2,6 +2,8 @@
 // app/layout.tsx
 
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { initLivePreview } from '../lib/contentstack';
 
 import '../styles/globals.css';
 
@@ -11,6 +13,14 @@ import { ThemeProvider } from './context/ThemeContext';
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 	const isHome = pathname === '/';
+
+  console.log('PREVIEW ENABLED?', process.env.NEXT_PUBLIC_CONTENTSTACK_LIVE_PREVIEW);
+  
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_CONTENTSTACK_LIVE_PREVIEW === 'true') {
+      initLivePreview();
+    }
+  }, []);
 
   return (
     <ThemeProvider>

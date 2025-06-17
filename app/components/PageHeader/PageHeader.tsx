@@ -32,7 +32,9 @@ const PageHeader = ({ title, subhead, isHomepage, scrollLinks }: HeaderProps) =>
                     <h1 className="display-large">{title}</h1>
                     <h2 className="body-xl">{subhead}</h2>
                 </div>
-                <Button onDark={true} iconRight={true} icon={<IoIosArrowDroprightCircle />}>Book now</Button>
+                <div className={styles.btnTray}>
+                  <Button iconRight={true} icon={<IoIosArrowDroprightCircle />}>Book now</Button>
+                </div>
             </div>
             <div className={styles.right}>
                 {isHomepage && (

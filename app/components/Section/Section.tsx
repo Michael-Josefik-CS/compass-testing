@@ -5,16 +5,17 @@ import Container from '../Container/Container';
 
 interface SectionProps {
   children: React.ReactNode;
-  bgLevel?: 'secondary' | 'tertiary'; // Optional prop to set background level
+  bgLevel?: 'secondary' | 'primary'; // Optional prop to set background level
   bgBranded?: boolean; // Optional prop to apply brand styles
   image?: string; // Optional prop for background image
   height?: string; // Optional prop for height override
   vSpacingOverride?: string; // Optional prop for vertical spacing override
   header?: boolean; // Optional prop to apply room for nav
   id?: string; // Optional prop for section ID
+  faded?: boolean; // Optional prop to apply faded effect
 }
 
-const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacingOverride, id }: SectionProps) => {
+const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacingOverride, id, faded }: SectionProps) => {
   const classes = classNames(
     styles.section,
     bgLevel && styles[`bg${bgLevel.charAt(0).toUpperCase() + bgLevel.slice(1)}`],
@@ -38,11 +39,13 @@ const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacing
         ...(image && { backgroundImage: `url(${image})` }),
       }}
     >
+        {faded && <div className={styles.faderLeft}></div>}
       <div className={contentClasses}>
         <Container verticalStretch={!!height}>
           {children}
         </Container>
       </div>
+        {faded && <div className={styles.faderRight}></div>}
     </section>
   )
 }

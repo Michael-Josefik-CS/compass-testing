@@ -47,6 +47,7 @@ const Nav = () => {
   };
 
   const onTransparent = isHome && isNearTop;
+  const logoTheme = theme === 'dark' ? '/assets/compass-logo-onDark.png' : '/assets/compass-logo-onLight.png';
 
   return (
     <nav
@@ -62,7 +63,7 @@ const Nav = () => {
         <div className={styles.logo}>
           <Link href="/">
             <Image
-              src={onTransparent ? "/assets/compass-logo.png" : "/assets/compass-logo-color.png"}
+              src={onTransparent ? "/assets/compass-logo-white.png" : logoTheme}
               alt="Compass Travel Logo"
               width={146}
               height={36}
@@ -90,9 +91,9 @@ const Nav = () => {
         </div>
 
         <div className={styles.rightActions}>
-          <Button type='tertiary' onDark={onTransparent} icon={<CgDarkMode />} iconRight={true} onClick={toggleTheme} />
-          <Button type='tertiary' onDark={onTransparent}>Log in</Button>
-          <Button type='secondary' onDark={onTransparent} onClick={handleClick}>Sign up</Button>
+          <Button type='tertiary' onImage={onTransparent} icon={<CgDarkMode />} iconRight={true} onClick={toggleTheme} />
+          <Button type='tertiary' onImage={onTransparent}>Log in</Button>
+          <Button type='secondary' onImage={onTransparent} onClick={handleClick}>Sign up</Button>
         </div>
 
       </div>

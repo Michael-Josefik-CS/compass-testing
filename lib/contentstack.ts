@@ -1,20 +1,35 @@
 import * as contentstack from 'contentstack'
-// import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
+import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
 import ContentstackLivePreview, { IStackSdk } from '@contentstack/live-preview-utils'
 import { Destination, Homepage } from './types'
 
 
 
 // Initialize Contentstack Delivery SDK
-export const stack = contentstack.Stack({
-	api_key: process.env.NEXT_PUBLIC_CONTENTSTACK_API_KEY! as string,
-	delivery_token: process.env.NEXT_PUBLIC_CONTENTSTACK_DELIVERY_TOKEN! as string,
-	environment: process.env.NEXT_PUBLIC_CONTENTSTACK_ENVIRONMENT! as string,
-	live_preview: {
-		enable: process.env.NEXT_PUBLIC_CONTENTSTACK_LIVE_PREVIEW === 'true',
-		preview_token: process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW_TOKEN! as string,
-	},
-})
+type StackConfig = {
+	api_key: string;
+	delivery_token: string;
+	environment: string;
+	live_preview?: {
+		enable: boolean;
+		preview_token: string;
+	};
+};
+
+const stackConfig: StackConfig = {
+	api_key: process.env.NEXT_PUBLIC_CONTENTSTACK_API_KEY!,
+	delivery_token: process.env.NEXT_PUBLIC_CONTENTSTACK_DELIVERY_TOKEN!,
+	environment: process.env.NEXT_PUBLIC_CONTENTSTACK_ENVIRONMENT!,
+};
+
+if (process.env.NEXT_PUBLIC_CONTENTSTACK_LIVE_PREVIEW === 'true') {
+	stackConfig.live_preview = {
+		enable: true,
+		preview_token: process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW_TOKEN!,
+	};
+}
+
+export const stack = contentstack.Stack(stackConfig);
 
 
 // Function to initialize Live Preview
@@ -71,7 +86,7 @@ export async function fetchHomepage(): Promise<Homepage | null> {
     const [entries] = await stack
       .ContentType('homepage')
       .Query()
-	  .includeReference('top_experiences.destination') // Include the reference field
+	  .includeReference('top_experiences.destination', 'showcase.showcase_block') // Include the reference field
       .toJSON()
       .find();
 

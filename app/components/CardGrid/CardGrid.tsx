@@ -1,33 +1,20 @@
-import React from 'react'
-import Section from '../Section/Section';
-import Container from '../Container/Container';
+import React from 'react';
+import styles from './CardGrid.module.css';
 import Card from '../Card/Card';
-import type { CardProps } from '../../../lib/types.ts'; // Adjust the import based on your project structure
+import { CardProps } from '@/lib/types';
 
 interface CardGridProps {
-    cards: CardProps[]; // Array of card data
-  }
+	cards: CardProps[];
+}
 
-const CardGrid = ({ cards }: CardGridProps) => {
-  return (
-    <Section>
-      <Container alignment="flex-start" layout="grid" gridColumnWidth={275}>
-        {cards.length > 0 ? (
-          cards.map((experience) => (
-            <Card
-              key={experience.key}
-              title={experience.title}
-              description={experience.description}
-              subtitle={experience.subtitle}
-              image={experience.image}
-            />
-          ))
-        ) : (
-          <p>Loading destinations...</p>
-        )}
-      </Container>
-    </Section>
-  );
+const CardGrid: React.FC<CardGridProps> = ({ cards }) => {
+	return (
+		<div className={styles.grid}>
+			{cards.map((card, index) => (
+				<Card key={index} {...card} />
+			))}
+		</div>
+	);
 };
 
-export default CardGrid
+export default CardGrid;

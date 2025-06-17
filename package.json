@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.13.7",
     "@contentstack/delivery-sdk": "^4.6.1",
     "@contentstack/live-preview-utils": "^3.2.0",
     "@contentstack/management": "^1.20.1",

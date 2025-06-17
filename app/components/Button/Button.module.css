@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.5rem;
-	transition: background-color 0.16s ease-in-out;
+	transition: all 0.16s ease-in-out;
 	border: none;
 	cursor: pointer;
 
@@ -30,19 +30,20 @@
 }
 
 .button:hover {
-	box-shadow: var(--shadow-default-level-2);
+	
 }
 
 
 
 /* Primary Variants —————— */
 .btnPrimary {
-	background-color: var(--bg-on-dark-idle);
-	color: var(--text-reversed-primary);
+	background-color: var(--bg-action-primary);
+	color: var(--text-on-dark-primary);
 }
 
 .btnPrimary:hover {
-	background-color: var(--bg-on-dark-hover);
+	background-color: var(--bg-action-hover);
+	box-shadow: var(--shadow-default-level-2);
 }
 
 .btnPrimaryOnDark {
@@ -53,25 +54,27 @@
 .btnPrimaryOnDark:hover {
 	background-color: var(--bg-on-dark-hover);
 	color: var(--text-on-light-primary);
-
+	box-shadow: var(--shadow-default-level-2);
 }
+
 
 
 
 /* Secondary Variants —————— */
 .btnSecondary {
 	background-color: transparent;
-	color: var(--text-on-light-primary);
-	border: var(--border-on-light-muted) 2px solid;
+	color: var(--text-action-primary);
+	border: var(--border-action-muted) 2px solid;
 }
 
 .btnSecondary:hover {
-	background-color: var(--bg-on-light-highlight);
-	border: var(--border-on-light-bold) 2px solid;
+	background-color: var(--bg-action-highlight);
+	border: var(--border-action-bold) 2px solid;
+	box-shadow: var(--shadow-default-level-2);
 }
 
 .btnSecondaryOnDark {
-	background-color: transparent;
+	background-color: var(--bg-on-dark-highlight);
 	color: var(--text-on-dark-primary);
 	border: var(--border-on-dark-muted) 2px solid;
 }
@@ -79,26 +82,27 @@
 .btnSecondaryOnDark:hover {
 	background-color: var(--bg-on-dark-highlight);
 	border: var(--border-on-dark-bold) 2px solid;
+	box-shadow: var(--shadow-default-level-2);
 }
 
 
 /* Tertiary Variants —————— */
 .btnTertiary {
 	background-color: transparent;
-	color: var(--text-default-primary);
-  box-shadow: none;
+	color: var(--text-action-primary);
+  	box-shadow: none;
 }
 
 .btnTertiary:hover {
-	opacity: 0.8;
+	background-color: var(--bg-action-highlight);
 }
 
 .btnTertiaryOnDark {
 	background-color: transparent;
 	color: var(--text-on-dark-primary);
-  box-shadow: none;
+  	box-shadow: none;
 }
 
 .btnTertiaryOnDark:hover {
-  background-color: var(--bg-on-dark-highlight);
+  	background-color: var(--bg-on-dark-highlight);
 }

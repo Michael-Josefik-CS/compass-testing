@@ -7,7 +7,8 @@ import { ReactNode } from 'react';
 type ButtonProps = {
 	children?: ReactNode;
 	type?: 'primary' | 'secondary' | 'tertiary' | 'link';
-	onDark?: boolean;
+	onImage?: boolean;
+	onBrand?: boolean;
 	icon?: ReactNode;
 	iconRight?: boolean;
 	onClick?: () => void;
@@ -16,12 +17,13 @@ type ButtonProps = {
 export default function Button({
   children,
 	type = 'primary',
-	onDark = false,
+	onImage = false,
+	onBrand = false,
 	icon,
 	iconRight = false,
 	onClick = () => {}, // Default to no-op if not provided
 }: ButtonProps) {
-	const variantKey = `btn${type.charAt(0).toUpperCase() + type.slice(1)}${onDark ? 'OnDark' : ''}`;
+	const variantKey = `btn${type.charAt(0).toUpperCase() + type.slice(1)}${onImage || onBrand ? 'OnDark' : ''}`;
   const classes = classNames(
     styles.button,
     styles[variantKey],

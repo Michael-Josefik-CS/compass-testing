@@ -5,10 +5,15 @@
     align-items: center;
     justify-content: center;
     padding-block: var(--spacing-3xl);
+    position: relative;
+}
+
+.bgPrimary {
+    background-color: var(--surface-default-primary);
 }
 
 .bgSecondary {
-    background-color: var(--bg-default-secondary);
+    background-color: var(--surface-default-secondary);
 }
 
 .withImage {
@@ -23,7 +28,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--transparent-black-level-4);
+    background-color: var(--dark-level-4);
     z-index: 1;
 }
 
@@ -39,4 +44,24 @@
 
 .navPadding {
     padding-top: 112px;
+}
+
+.faderLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc((100vw - 1440px) / 2);
+    background: linear-gradient(to right, var(--surface-default-tertiary) 25%, transparent);
+    z-index: 10;
+}
+
+.faderRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc((100vw - 1440px) / 2);
+    background: linear-gradient(to left, var(--surface-default-tertiary) 25%, transparent);
+    z-index: 10;
 }

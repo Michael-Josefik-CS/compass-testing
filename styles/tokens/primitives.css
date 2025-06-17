@@ -11,41 +11,41 @@
   --brand-800: hsla(214, 75%, 22%, 1);
 
   /* Brand Transparent */
-  --transparent-brand-level-1: hsla(214, 75%, 36%, 0.15);
-  --transparent-brand-level-2: hsla(214, 75%, 36%, 0.3);
-  --transparent-brand-level-3: hsla(214, 75%, 36%, 0.6);
-  --transparent-brand-level-4: hsla(214, 75%, 36%, 0.7);
-  --transparent-brand-level-5: hsla(214, 75%, 36%, 0.8);
-  --transparent-brand-level-6: hsla(214, 75%, 36%, 0.98);
+  --brand-t-level-1: hsla(214, 75%, 36%, 0.95);
+  --brand-t-level-2: hsla(214, 75%, 36%, 0.85);
+  --brand-t-level-3: hsla(214, 75%, 36%, 0.7);
+  --brand-t-level-4: hsla(214, 75%, 36%, 0.6);
+  --brand-t-level-5: hsla(214, 75%, 36%, 0.2);
+  --brand-t-level-6: hsla(214, 75%, 36%, 0.05);
 
   /* White */
-  --transparent-white-level-1: hsla(0, 0%, 100%, 0.05);
-  --transparent-white-level-2: hsla(0, 0%, 100%, 0.15);
-  --transparent-white-level-3: hsla(0, 0%, 100%, 0.40);
-  --transparent-white-level-4: hsla(0, 0%, 100%, 0.50);
-  --transparent-white-level-5: hsla(0, 0%, 100%, 0.65);
-  --transparent-white-level-6: hsla(0, 0%, 100%, 0.95);
+  --light-level-1: hsla(210, 20%, 98%, 0.95);
+  --light-level-2: hsla(210, 20%, 98%, 0.85);
+  --light-level-3: hsla(210, 20%, 98%, 0.6);
+  --light-level-4: hsla(210, 20%, 98%, 0.4);
+  --light-level-5: hsla(210, 20%, 98%, 0.2);
+  --light-level-6: hsla(210, 20%, 98%, 0.05);
 
   /* Black */
-  --transparent-black-level-1: hsla(0, 0%, 0%, 0.05);
-  --transparent-black-level-2: hsla(0, 0%, 0%, 0.15);
-  --transparent-black-level-3: hsla(0, 0%, 0%, 0.40);
-  --transparent-black-level-4: hsla(0, 0%, 0%, 0.60);
-  --transparent-black-level-5: hsla(0, 0%, 0%, 0.75);
-  --transparent-black-level-6: hsla(0, 0%, 0%, 0.95);
+  --dark-level-1: hsla(180, 7%, 3%, 0.95);
+  --dark-level-2: hsla(180, 7%, 3%, 0.85);
+  --dark-level-3: hsla(180, 7%, 3%, 0.6);
+  --dark-level-4: hsla(180, 7%, 3%, 0.4);
+  --dark-level-5: hsla(180, 7%, 3%, 0.2);
+  --dark-level-6: hsla(180, 7%, 3%, 0.05);
 
   /* Neutral */
   --white: hsla(0, 0%, 100%, 1);
-  --neutral-100: hsla(220, 10%, 95%, 1);
-  --neutral-200: hsla(220, 11%, 92%, 1);
-  --neutral-300: hsla(218, 10%, 84%, 1);
+  --neutral-100: hsla(210, 20%, 98%, 1);
+  --neutral-200: hsla(220, 12%, 95%, 1);
+  --neutral-300: hsla(225, 10%, 92%, 1);
   --neutral-400: hsla(219, 9%, 71%, 1);
   --neutral-500: hsla(221, 10%, 57%, 1);
   --neutral-600: hsla(221, 10%, 44%, 1);
-  --neutral-700: hsla(225, 10%, 30%, 1);
-  --neutral-800: hsla(225, 10%, 16%, 1);
-  --neutral-900: hsla(220, 10%, 12%, 1);
-  --neutral-1000: hsla(225, 11%, 6%, 1);
+  --neutral-700: hsla(228, 10%, 20%, 1);
+  --neutral-800: hsla(225, 10%, 8%, 1);
+  --neutral-900: hsla(220, 12%, 5%, 1);
+  --neutral-1000: hsla(180, 7%, 3%, 1);
   --black: hsla(0, 0%, 0%, 1);
 
 
