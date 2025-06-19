@@ -1,5 +1,5 @@
 import * as contentstack from 'contentstack'
-import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
+// import contentstackDelivery, { Region, QueryOperation } from '@contentstack/delivery-sdk'
 import ContentstackLivePreview, { IStackSdk } from '@contentstack/live-preview-utils'
 import { Destination, Homepage } from './types'
 
@@ -77,9 +77,6 @@ export async function fetchDestinations(): Promise<Destination[]> {
 }
 
 
-
-
-
 // Function to fetch destinations from Contentstack
 export async function fetchHomepage(): Promise<Homepage | null> {
   try {
@@ -93,6 +90,24 @@ export async function fetchHomepage(): Promise<Homepage | null> {
     return entries[0] || null;
   } catch (error) {
     console.error('Error fetching homepage:', error);
+    return null;
+  }
+}
+
+
+// Function to fetch a specific destination by slug
+export async function fetchDestinationBySlug(slug: string): Promise<Destination | null> {
+  try {
+    const [entries] = await stack
+      .ContentType('destination')
+      .Query()
+      .where('slug', slug)
+      .toJSON()
+      .find();
+
+    return entries[0] || null;
+  } catch (error) {
+    console.error(`Error fetching destination with slug "${slug}":`, error);
     return null;
   }
 }

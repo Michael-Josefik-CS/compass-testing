@@ -1,26 +1,33 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./NavLink.module.css";
+import classNames from "classnames";
 
 interface NavLinkProps {
 	href: string;
 	children: React.ReactNode;
-	onTransparent: boolean;
+	onImage: boolean;
 }
 
-export const NavLink = ({ href, children, onTransparent = false }: NavLinkProps) => {
+const NavLink = ({ href, children, onImage = false }: NavLinkProps) => {
 	const pathname = usePathname();
 	const isActive = pathname === href;
 
-	const classNames = [
+/* 	const classNames = [
 		styles.link,
-		onTransparent ? styles.onTransparent : styles.onOpaque,
+		onImage ? styles.onImage : styles.onSurface,
 		isActive ? styles.active : ""
-	].join(" ");
+	].join(" "); */
 
 	return (
-		<Link href={href} className={classNames}>
+		<Link href={href} className={classNames(
+			onImage ? styles.onImage : styles.onSurface,
+			styles.link,
+			isActive ? styles.active : ""
+		)}>
 			{children}
 		</Link>
 	);
 };
+
+export default NavLink;

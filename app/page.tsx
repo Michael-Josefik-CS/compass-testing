@@ -10,7 +10,7 @@ import Section from "./components/Section/Section";
 import PageHeader from "./components/PageHeader/PageHeader";
 import CardCarousel from "./components/CardCarousel/CardCarousel";
 import Showcase from "./components/Showcase/Showcase";
-import Button from "./components/Button/Button";
+import FieldNotesShowcase from "./components/FieldNotesShowcase/FieldNotesShowcase";
 
 
 export default function Home() {
@@ -35,17 +35,22 @@ export default function Home() {
     {homepage ? (
       <>
 
-        <Section bgBranded={true} height="100vh" vSpacingOverride={"0"} image={homepage.hero_image.url} header={true} >
-          <PageHeader 
-            title={homepage.title} 
-            subhead={homepage.subhead}
-            isHomepage={true}
-            scrollLinks={[{label: 'Top Experiences', section: 'top-experiences'}, {label: 'Different', section: 'different'}]}
-          />
+        <PageHeader 
+          title={homepage.title} 
+          subhead={homepage.subhead}
+          image={homepage.hero_image.url}
+          isHomepage={true}
+          scrollLinks={[
+            {label: 'Top Experiences', section: 'top-experiences'}, 
+            {label: 'Different', section: 'different'}]}
+        />
+
+        <Section id="top-experiences" bgColor="secondary" faded={true}>
+          <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
 
-        <Section id="top-experiences" bgLevel="secondary" faded={true}>
-          <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
+        <Section bgColor="primary">
+          <FieldNotesShowcase></FieldNotesShowcase>
         </Section>
 
         {showcases.map((showcase, i) => (
@@ -54,11 +59,11 @@ export default function Home() {
           </Section>
         ))}
 
-        <Section bgLevel="primary">
+        <Section bgColor="primary">
           <CardCarousel align="end" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
 
-        <Section id="different" bgLevel="secondary">
+        <Section id="different" bgColor="secondary">
           <CardCarousel align="start" cards={mapExperiencesToCards(homepage.top_experiences)}/>
         </Section>
 

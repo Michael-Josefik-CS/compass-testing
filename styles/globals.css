@@ -56,6 +56,11 @@ html, body {
 	width: 100%;
 }
 
+a {
+  color: var(--text-action-primary);
+  text-decoration: none;
+}
+
 
 .display-large {
   font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */

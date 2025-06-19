@@ -90,7 +90,7 @@
     --text-on-light-disabled: var(--dark-level-4);
 
     /* Action */
-    --text-action-primary: var(--brand-t-level-1);
+    --text-action-primary: var(--brand-500);
     --text-action-hover: var(--brand-800);
     --text-action-active: var(--brand-600);
 

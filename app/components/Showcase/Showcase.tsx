@@ -10,7 +10,6 @@ import Button from '../Button/Button'; // Adjust the import path as necessary
 
 const Showcase = ({
   split = false, // Default to false if not provided
-  bgBranded, 
   image, 
   headline, 
   subhead, 

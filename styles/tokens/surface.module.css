@@ -1,0 +1,24 @@
+.surfaceDefaultPrimary {
+    background-color: var(--surface-default-primary);
+}
+.surfaceDefaultSecondary {
+    background-color: var(--surface-default-secondary);
+}
+.surfaceDefaultTertiary {
+    background-color: var(--surface-default-tertiary);
+}
+.surfaceInversePrimary {
+    background-color: var(--surface-inverse-primary);
+}
+.surfaceInverseSecondary {
+    background-color: var(--surface-inverse-secondary);
+}
+.surfaceInverseTertiary {
+    background-color: var(--surface-inverse-tertiary);
+}
+.surfaceBrandPrimary {
+    background-color: var(--surface-brand-primary);
+}
+.surfaceBrandSecondary {        
+    background-color: var(--surface-brand-secondary);
+}

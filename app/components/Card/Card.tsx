@@ -2,14 +2,13 @@ import React from 'react'
 import Image from 'next/image';
 import styles from './Card.module.css'
 import { CardProps } from '../../../lib/types'; // Adjust the import path based on your project structure
+import HeaderBlock from '../atoms/HeaderBlock/HeaderBlock';
 
 
 
 const Card = ({ title, description, subtitle, image, priority }: CardProps) => {
   return (
     <div className={styles.card}>
-{/*       <div className={styles.shadowOverlay}></div>
- */}
       <div className={styles.imageWrapper}>
         <Image
           src={image ?? '/default-image.jpg'}
@@ -23,8 +22,8 @@ const Card = ({ title, description, subtitle, image, priority }: CardProps) => {
 
       <div className={styles.content}>
         <div className={styles.headerTextWrapper}>
-          <h3 className={`heading-h3`}>{title}</h3>
-          {subtitle && ( <h5 className={`${styles.subtitle} heading-h5`}>{subtitle}</h5> )}
+          <HeaderBlock size='h3' color='primary'>{title}</HeaderBlock>
+          {subtitle && ( <HeaderBlock size='h5' color='secondary'>{subtitle}</HeaderBlock> )}
         </div>
 
         <div className={styles.details}>

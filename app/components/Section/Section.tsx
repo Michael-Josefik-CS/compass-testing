@@ -2,46 +2,46 @@ import React from 'react'
 import styles from './Section.module.css'
 import classNames from 'classnames';
 import Container from '../Container/Container';
+import { SurfaceColorTokens, getSurfaceColor } from '@/lib/types';
 
 interface SectionProps {
   children: React.ReactNode;
-  bgLevel?: 'secondary' | 'primary'; // Optional prop to set background level
-  bgBranded?: boolean; // Optional prop to apply brand styles
+  bgColor?: SurfaceColorTokens; // Optional prop to set background level
   image?: string; // Optional prop for background image
-  height?: string; // Optional prop for height override
+  size?: 'large' | 'medium'; // Optional prop for height override
   vSpacingOverride?: string; // Optional prop for vertical spacing override
   header?: boolean; // Optional prop to apply room for nav
   id?: string; // Optional prop for section ID
   faded?: boolean; // Optional prop to apply faded effect
 }
 
-const Section = ({ children, bgLevel, bgBranded, image, header, height, vSpacingOverride, id, faded }: SectionProps) => {
-  const classes = classNames(
-    styles.section,
-    bgLevel && styles[`bg${bgLevel.charAt(0).toUpperCase() + bgLevel.slice(1)}`],
-    image && styles.withImage,
-    image && styles.withOverlay,
-  );
+const Section = ({ children, bgColor, image, header, size, vSpacingOverride, id, faded }: SectionProps) => {
 
   const contentClasses = classNames(
     styles.content,
-    height && styles.fullHeight,
+    size && styles.fullHeight,
     header && styles.navPadding,
   );
 
   return (
     <section 
       id={id}
-      className={classes} 
+      className={classNames(
+        styles.section,
+        bgColor && getSurfaceColor[bgColor],
+        image && styles.withImage,
+        image && styles.withOverlay,
+        size && styles[size],
+        size && styles.fullHeight,
+      )} 
       style={{
         ...(vSpacingOverride && { paddingBlock: `${vSpacingOverride}` }),
-        ...(height && { height }),
         ...(image && { backgroundImage: `url(${image})` }),
       }}
     >
         {faded && <div className={styles.faderLeft}></div>}
       <div className={contentClasses}>
-        <Container verticalStretch={!!height}>
+        <Container verticalStretch={!!size}>
           {children}
         </Container>
       </div>

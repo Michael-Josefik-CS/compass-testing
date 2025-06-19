@@ -53,8 +53,9 @@
   font-size: 0.875rem;     /* 14px */
   font-style: normal;
   font-weight: 700;
-  line-height: 1.25rem;    /* 20px */
+  line-height: 1.75rem;    /* 20px */
   letter-spacing: 0.02rem; /* 0.28px */
+  text-transform: uppercase;
 }
 
 .bodyXl {
@@ -160,4 +161,8 @@
 }
 .textActionActive {
   color: var(--text-action-active);
+}
+
+.leftAlign {
+  text-align: left;
 }

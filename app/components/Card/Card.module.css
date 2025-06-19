@@ -1,11 +1,13 @@
 .card {
     height: 400px;
-    min-width: 380px;
+    width: 100%;
+    min-width: 320px;
     max-width: 520px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-grow: 1;
 
     overflow: hidden;
     position: relative;
@@ -17,7 +19,7 @@
     /* Raised/Light/Level 1 */
     box-shadow: var(--shadow-default-level-1, 0px 2px 8px 0px rgba(0, 0, 0, 0.1));
 
-    transition: all 0.16s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .card::after {
@@ -37,7 +39,7 @@
 
 .card:hover {
     translate: 0 -4px; /* Slightly lift the card on hover */
-    border: 1px solid var(--border-default-bold, #E5E7EB);
+    border: 1px solid var(--border-action-bold);
     box-shadow: var(--shadow-default-level-2, 0px 4px 12px 0px rgba(0, 0, 0, 0.15));
 }
 

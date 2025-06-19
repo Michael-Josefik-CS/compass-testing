@@ -4,12 +4,26 @@ import { useEffect, useState } from 'react'
 import { fetchDestinations } from '@/lib/contentstack'
 import { Destination } from '@/lib/types'
 import Section from '../components/Section/Section'
-import CardCarousel from '../components/CardCarousel/CardCarousel'
 import { mapDestinationsToCards } from '@/lib/utils'
 import CardGrid from '../components/CardGrid/CardGrid'
+import PageHeader from '../components/PageHeader/PageHeader'
+
+import imageTest from '../../public/assets/img_greece.jpg'
+
+
+/* interface PageHeaderProps {
+  regions?: string[];
+  selectedRegion?: string;
+  onRegionChange?: (region: string) => void;
+} */
+
 
 export default function DestinationsPage() {
+/*   const defaultRegion = 'Asia'
+  const [selectedRegion, setSelectedRegion] = useState(defaultRegion) */
   const [destinations, setDestinations] = useState<Destination[]>([])
+
+  
 
   useEffect(() => {
     async function loadDestinations() {
@@ -25,12 +39,16 @@ export default function DestinationsPage() {
     <>
     {destinations ? (
       <>
+        <PageHeader 
+          title="Destinations"
+          subhead="Explore our diverse range of travel destinations"
+          image={imageTest.src}
+          scrollLinks={[
+            {label: 'Destinations', section: 'top-experiences'}, 
+            {label: 'Advisors', section: 'different'}]}
+        />
 
-{/*         <Section bgLevel="primary">
-          <CardCarousel align="end" cards={mapDestinationsToCards(destinations)}/>
-        </Section> */}
-
-        <Section bgLevel="secondary" header={true} vSpacingOverride="0" image="/images/destinations-hero.jpg">
+        <Section bgColor="secondary">
           <CardGrid cards={mapDestinationsToCards(destinations)}/>
         </Section>
 

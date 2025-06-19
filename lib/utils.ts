@@ -1,4 +1,4 @@
-import type { CardProps, Experience, Destination } from './types';
+import type { CardProps, Experience, Destination, ShowcaseEntry } from './types';
 import type { ShowcaseProps } from './types';
 
 export function mapExperiencesToCards(experiences: Experience[]): CardProps[] {
@@ -18,12 +18,20 @@ export function mapDestinationsToCards(destinations: Destination[]): CardProps[]
 		subtitle: des.region?.[0].title ?? '',
 		description: des.intro_blurb,
 		image: des.hero_image?.url ?? '',            // optional fallback
+		slug: des.slug,
 	}));
 }
 
-export function mapShowcaseToShowcase(showcaseEntries: any[]): ShowcaseProps[] {
+export function mapShowcaseToShowcase(showcaseEntries: ShowcaseEntry[]): ShowcaseProps[] {
 	return showcaseEntries.map((entry) => {
-		const buttons = entry.buttons?.map((btn: any) => ({
+		const buttons = entry.buttons?.map((btn: {
+			button_1?: {
+				label?: string;
+				url?: {
+					href: string;
+				};
+			};
+		}) => ({
 			label: btn.button_1?.label ?? '',
 			url: btn.button_1?.url?.href ?? '#',
 		})) ?? [];

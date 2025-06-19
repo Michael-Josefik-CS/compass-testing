@@ -1,26 +1,35 @@
-'use client'; // Mark this component as a client component
+'use client';
 
 import React, { useEffect, useRef, useState } from 'react'
 
 import Image from 'next/image';
 import Link from 'next/link'
 
-import styles from './Nav.module.css'; // Optional if you're using CSS Modules
-import Button from '../Button/Button'; // Adjust the import path as necessary
-import { usePathname } from 'next/navigation';
-import { NavLink } from './NavLink';
-import { useTheme } from '@/app/context/ThemeContext';
-import { CgDarkMode } from "react-icons/cg";
+import styles from './Nav.module.css'; 
+import Button from '../Button/Button'; 
+import NavLink from './NavLink';
 
-const Nav = () => {
-  const pathname = usePathname();
+import { useTheme } from '@/app/context/ThemeContext';
+
+import { CgDarkMode } from "react-icons/cg";
+import classNames from 'classnames';
+
+
+interface NavProps {  
+  onImage: boolean; // Optional prop to apply image styles
+}
+
+
+
+const Nav = ({ onImage = true }: NavProps) => {
+
   const { theme, toggleTheme } = useTheme()
-  const isHome = pathname === '/';
 
   const [showNav, setShowNav] = useState(true);
   const [isNearTop, setIsNearTop] = useState(true);
   const lastScrollY = useRef(0);
 
+  // Effect to handle scroll events and show/hide nav based on scroll direction
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -42,28 +51,31 @@ const Nav = () => {
 
 
 
-  const handleClick = () => {
-    alert('Button clicked!');
+  const handleLogIn = () => {
+    alert('Log in functionality is not implemented yet.');
+  };
+  const handleSignUp = () => {
+    alert('Sign up functionality is not implemented yet.');
   };
 
-  const onTransparent = isHome && isNearTop;
   const logoTheme = theme === 'dark' ? '/assets/compass-logo-onDark.png' : '/assets/compass-logo-onLight.png';
 
   return (
     <nav
-      className={`${styles.navSection} ${
-        isHome && isNearTop ? styles.transparent : styles.opaque
-      }`}
-      style={{
-        transform: showNav ? 'translateY(0)' : 'translateY(-100%)',
-      }}
+
+      className={classNames(
+        styles.navSection,
+        onImage && isNearTop ? styles.transparent : styles.opaque,
+        showNav ? styles.show : styles.hide,
+      )}
+
     >
       <div className={styles.container}>
 
         <div className={styles.logo}>
           <Link href="/">
             <Image
-              src={onTransparent ? "/assets/compass-logo-white.png" : logoTheme}
+              src={isNearTop ? "/assets/compass-logo-white.png" : logoTheme}
               alt="Compass Travel Logo"
               width={146}
               height={36}
@@ -76,27 +88,28 @@ const Nav = () => {
         <div className={styles.navLinksWrapper}>
           <ul className={styles.navLinks}>
             <li>
-              <NavLink href="/destinations" onTransparent={onTransparent}>Destinations</NavLink>
+              <NavLink href="/destinations" onImage={isNearTop}>Destinations</NavLink>
             </li>
             <li>
-              <NavLink href="//" onTransparent={onTransparent}>Experiences</NavLink>
+              <NavLink href="//" onImage={isNearTop}>Experiences</NavLink>
             </li>
             <li>
-              <NavLink href="/advisors" onTransparent={onTransparent}>Advisors</NavLink>
+              <NavLink href="/advisors" onImage={isNearTop}>Advisors</NavLink>
             </li>
             <li>
-              <NavLink href="//" onTransparent={onTransparent}>Field Notes</NavLink>
+              <NavLink href="//" onImage={isNearTop}>Field Notes</NavLink>
             </li>
           </ul>
         </div>
 
         <div className={styles.rightActions}>
-          <Button type='tertiary' onImage={onTransparent} icon={<CgDarkMode />} iconRight={true} onClick={toggleTheme} />
-          <Button type='tertiary' onImage={onTransparent}>Log in</Button>
-          <Button type='secondary' onImage={onTransparent} onClick={handleClick}>Sign up</Button>
+          <Button type='tertiary' onImage={isNearTop} icon={<CgDarkMode />} iconRight={true} onClick={toggleTheme} />
+          <Button type='tertiary' onImage={isNearTop} onClick={handleLogIn}>Log in</Button>
+          <Button type='secondary' onImage={isNearTop} onClick={handleSignUp}>Sign up</Button>
         </div>
 
       </div>
+      <div className={classNames(isNearTop && styles.imageOverlay)} aria-hidden={true}></div>
     </nav>
   )
 }

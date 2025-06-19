@@ -1,0 +1,30 @@
+.primary {
+  color: var(--text-default-primary);
+}
+.secondary {
+  color: var(--text-default-secondary);
+}
+.disabled {
+  color: var(--text-default-disabled);
+}
+.inversePrimary {
+  color: var(--text-inverse-primary);
+}
+.inverseSecondary {
+  color: var(--text-inverse-secondary);
+}
+.onDarkPrimary {
+  color: var(--text-on-dark-primary);
+}
+.onDarkSecondary {
+  color: var(--text-on-dark-secondary);
+}
+.onLightPrimary {
+  color: var(--text-on-light-primary);
+}
+.onLightSecondary {
+  color: var(--text-on-light-secondary);
+}
+.textActionPrimary {
+  color: var(--text-action-primary);
+}
