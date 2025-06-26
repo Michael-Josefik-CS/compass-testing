@@ -31,7 +31,7 @@ const Section = ({ children, bgColor, image, video, header, size, vSpacingOverri
         styles.section,
         bgColor && getSurfaceColor[bgColor],
         image && styles.withImage,
-        image || video && styles.withOverlay,
+        (image || video) && styles.withOverlay,
         size && styles[size],
         size && styles.fullHeight,
       )} 
