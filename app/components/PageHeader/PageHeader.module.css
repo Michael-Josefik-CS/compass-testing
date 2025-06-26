@@ -1,0 +1,111 @@
+.pageHeader {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 100%;
+	height: 100%;	
+	
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	max-height: 1080px;
+}
+
+.fullHeight {
+	height: 100vh;
+	max-height: 1080px;
+}
+
+.headerWrapper {
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--Spacing-lg, 16px);
+	flex-grow: 1;
+	width: 100%;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 32px;
+	flex: 1 0 0;
+}
+.right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2; /* Ensure content is above the overlay */
+}
+
+.headerText {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--Spacing-none, 0px);
+
+	color: var(--text-on-dark-primary);
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btnTray {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+.socialButtons {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+
+.headerScroller {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+	width: 100%;
+	flex-shrink: 0;
+	padding-block: 32px;
+}
+
+
+.scrollLineContainer {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	width: 100%;
+}
+.scrollerLeft {
+	align-items: flex-end;
+}
+.scrollerRight {
+	align-items: flex-start;
+}
+
+.scrollerLine {
+	width: 30%;
+	height: 2px;
+	background-color: var(--bg-on-dark-idle);
+	opacity: 0.3;
+	transition: all 0.3s ease;
+}
+
+.headerScroller:hover .scrollerLine {
+	opacity: 0.6;
+	width: 100%;
+}
+
+.scrollerButtons {
+	height: 42px;
+	display: flex;
+	flex-direction: row;
+	gap: 32px;
+}

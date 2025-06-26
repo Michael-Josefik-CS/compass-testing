@@ -1,0 +1,32 @@
+.button {
+    height: 56px;
+    width: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    color: var(--text-on-dark-secondary);
+    border: 2px solid var(--border-on-dark-muted);
+    border-radius: 100px;
+
+    cursor: pointer;
+    transition: all 0.16s ease-in-out;
+}
+
+.button:hover {
+    color: var(--text-on-dark-primary);
+    border: 2px solid var(--border-on-dark-bold);
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+	width: 1.5rem;   /* ~20px */
+	height: 1.5rem;
+	font-size: 1.5rem; /* <- This is important */
+}

@@ -1,0 +1,52 @@
+.carouselContainer {
+	width: 100%;
+	max-width: 1440px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.carouselHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.carouselOuter {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	padding-bottom: 16px;
+}
+
+.carouselInner {
+	display: flex;
+	gap: 16px;
+	padding: 0 32px;
+	box-sizing: border-box;
+	width: fit-content;
+}
+
+.carouselInner > * {
+	scroll-snap-align: start;
+}
+
+.embla {
+  overflow: visible;
+}
+
+.emblaViewport {
+  width: 100%;
+}
+
+.emblaContainer {
+	display: flex;
+	gap: 16px;
+}
+
+.emblaSlide {
+	flex: 0 0 25%; /* 3 slides per view */
+	box-sizing: border-box;
+}

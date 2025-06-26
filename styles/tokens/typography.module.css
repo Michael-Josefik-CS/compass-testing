@@ -1,0 +1,168 @@
+.displayLarge {
+  font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
+  font-size: var(--font-size-5xl);                /* 64px */
+  font-weight: var(--font-weight-semibold);         /* font-weight: 500; */
+  line-height: var(--font-line-height-3xl);       /* 64px */
+  letter-spacing: var(--font-letter-spacing-xs);  /* -0.005em */
+  text-transform: uppercase;
+}
+
+.headingH1 {
+  font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
+  font-size: var(--font-size-4xl);                /* 40px */
+  font-weight: var(--font-weight-regular);        /* font-weight: 400; */
+  line-height: var(--font-line-height-2xl);       /* 44px */
+  letter-spacing: var(--font-letter-spacing-xs);  /* -0.01em */
+}
+
+.headingH2 {
+  font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
+  font-size: var(--font-size-3xl);                /* 32px */
+  font-weight: var(--font-weight-regular);        /* font-weight: 400; */
+  line-height: var(--font-line-height-xl);        /* 36px */
+  letter-spacing: var(--font-letter-spacing-xs);  /* -0.01em */
+}
+
+.headingH3 {
+  font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
+  font-size: var(--font-size-2xl);                /* 24px */
+  font-weight: var(--font-weight-medium);         /* font-weight: 500; */
+  line-height: var(--font-line-height-lg);        /* 28px */
+  letter-spacing: var(--font-letter-spacing-sm);  /* 0em */
+}
+
+.headingH4 {
+  font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
+  font-size: var(--font-size-lg);                 /* 18px */
+  font-weight: var(--font-weight-medium);         /* font-weight: 500; */
+  line-height: var(--font-line-height-md);        /* 20px */
+  letter-spacing: var(--font-letter-spacing-md);  /* 0.01em */
+}
+
+.headingH5 {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 1rem;         /* 16px */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25rem;    /* 20px */
+  letter-spacing: 0.01rem; /* 0.16px */
+}
+
+.headingH6 {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 0.875rem;     /* 14px */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.75rem;    /* 20px */
+  letter-spacing: 0.02rem; /* 0.28px */
+  text-transform: uppercase;
+}
+
+.bodyXl {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 1.25rem;      /* 20px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;     /* 24px */
+  letter-spacing: 0.0125rem; /* 0.2px */
+}
+
+.bodyLg {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 1.125rem;     /* 18px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;     /* 24px */
+  letter-spacing: 0.01125rem; /* 0.18px */
+}
+
+.bodyMd {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 1rem;         /* 16px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;     /* 24px */
+  letter-spacing: 0.015rem; /* 0.24px */
+}
+
+.bodySm {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 0.875rem;     /* 14px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25rem;    /* 20px */
+  letter-spacing: 0.0175rem; /* 0.28px */
+}
+
+.caption {
+  font-family: var(--font-source-sans-3);         /* "Source Sans 3", sans-serif; */
+  font-size: 0.75rem;      /* 12px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;       /* 16px */
+  letter-spacing: 0.015rem; /* 0.24px */
+}
+
+.buttonTextMd {
+  font-family: var(--font-league-spartan);        /* "League Spartan", sans-serif; */
+  font-size: 1.25rem;      /* 20px */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem;   /* 18px */
+  letter-spacing: 0.0125rem; /* 0.2px */
+}
+
+
+.textDefaultPrimary {
+  color: var(--text-default-primary);
+}
+.textDefaultSecondary {
+  color: var(--text-default-secondary);
+}
+.textDefaultDisabled {
+  color: var(--text-default-disabled);
+}
+
+.textInversePrimary {
+  color: var(--text-inverse-primary);
+}
+.textInverseSecondary {
+  color: var(--text-inverse-secondary);
+}
+.textInverseDisabled {
+  color: var(--text-inverse-disabled);
+}
+
+.textOnDarkPrimary {
+  color: var(--text-on-dark-primary);
+}
+.textOnDarkSecondary {
+  color: var(--text-on-dark-secondary);
+}
+.textOnDarkDisabled {
+  color: var(--text-on-dark-disabled);
+}
+
+.textOnLightPrimary {
+  color: var(--text-on-light-primary);
+}
+.textOnLightSecondary {
+  color: var(--text-on-light-secondary);
+}
+.textOnLightDisabled {
+  color: var(--text-on-light-disabled);
+}
+
+.textActionPrimary {
+  color: var(--text-action-primary);
+}
+.textActionHover {
+  color: var(--text-action-hover);
+}
+.textActionActive {
+  color: var(--text-action-active);
+}
+
+.leftAlign {
+  text-align: left;
+}
